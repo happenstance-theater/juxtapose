@@ -34,7 +34,7 @@ const routes = [
   {
     path: '/ssm/tea',
     props: {
-      image: 'https://happenstance-demo.s3.amazonaws.com/images/mlj_menu.jpg',
+      image: 'https://happenstance-demo.s3.amazonaws.com/images/ssm_menu.jpg',
       video: 'https://happenstance-demo.s3.amazonaws.com/ssm_tea/playlist.m3u8',
       afterPlaybackTo: '/ssm',
       hotspots: [
@@ -56,7 +56,7 @@ const routes = [
   {
     path: '/mlj/egg',
     props: {
-      image: 'media/images/mlj_menu.jpg',
+      image: 'https://happenstance-demo.s3.amazonaws.com/images/mlj_menu.jpg',
       video: 'https://happenstance-demo.s3.amazonaws.com/mlj_egg/playlist.m3u8',
       afterPlaybackTo: '/mlj',
       hotspots: [
@@ -67,7 +67,7 @@ const routes = [
   {
     path: '/mlj/skull',
     props: {
-      image: 'media/images/mlj_menu.jpg',
+      image: 'https://happenstance-demo.s3.amazonaws.com/images/mlj_menu.jpg',
       video: 'https://happenstance-demo.s3.amazonaws.com/mlj_skull/playlist.m3u8',
       afterPlaybackTo: '/mlj',
       hotspots: [
