@@ -1,38 +1,7 @@
-html, body {
+html,
+body {
   background-color: #222;
   color: white;
   margin: 0;
   padding: 0;
-}
-
-#slide {
-  margin: 0 auto;
-  max-width: 1200px;
-  position: relative;
-}
-
-#slide button.slide-button {
-  background-color: rgba(255, 0, 0, 0.15);
-  border: none;
-  color: white;
-  cursor: pointer;
-  display: block;
-  font-weight: bold;
-  outline: none;
-  position: absolute;
-  z-index: 1;
-}
-
-#slide button.slide-button:hover {
-  background-color: rgba(255, 0, 0, 0.33);
-}
-
-#slide button.slide-button-start {
-  background-color: rgba(255, 255, 255, 0.6);
-  font-size: 2em;
-  left: 50%;
-  top: 50%;
-  width: 30%;
-  height: 30%;
-  transform: translate(-50%, -50%);
 }
