@@ -1,6 +1,8 @@
-# happenstance
+# Happenstance
 
-## transcoder command
+Built with [impress.js](https://github.com/impress/impress.js).
+
+## legacy.html transcoder command
 
 ```shell
 ffmpeg -hide_banner -y -i ./mlj_egg.mp4 \
