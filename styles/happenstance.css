@@ -1,0 +1,32 @@
+#start  {
+    position: relative;
+    /* background: red; */
+    height: 1000px;
+    /* border: 50px solid green; */
+}
+#start img {
+    width: 500px;
+    display: block;
+    border: 500px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+img.parrot {
+    width: 340px;
+}
+
+img.ball {
+    width: 160px;
+}
+
+img.butterfly {
+    width: 380px;
+}
+
+img.cornell {
+    width: 900px;
+}

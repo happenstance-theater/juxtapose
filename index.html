@@ -3,18 +3,16 @@
 <head>
     <title>Happenstance Play</title>
     <link href="styles/reset.css" rel="stylesheet" />
-    <link href="styles/impress-demo.css" rel="stylesheet" />
     <link href="styles/impress-common.css" rel="stylesheet" />
+    <link href="styles/happenstance.css" rel="stylesheet" />
 </head>
 
 <body class="impress-not-supported">
 
-    <!--
-        For example this fallback message is only visible when there is `impress-not-supported` class on body.
-    -->
+
+    <!-- Fallback Message -->
     <div class="fallback-message">
-        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
-        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+        <p>Your browser doesn't support the features required by this presentation. For the best experience please make sure you are using an <a href="https://browsehappy.com/">up-to-date browser</a>.</p>
     </div>
 
 
@@ -28,37 +26,78 @@
         data-perspective="1000">
 
 
-        <div id="overview" class="step" data-x="0" data-y="0" data-z="0" data-scale="5"></div>
+        <!-- Start -->
+        <div id="start" class="step" data-x="0" data-y="0" data-z="0" data-scale="6">
+            <img src="img/frame.png" />
+        </div>
 
-        <div id="overview2" class="step" data-x="0" data-y="0" data-z="0" data-scale="3"></div>
+        <div id="zoom" class="step" data-x="0" data-y="0" data-z="0" data-scale="3"></div>
 
-        <div class="step" data-x="800" data-y="500" data-z="400">
+
+        <!-- Internal BG Objects -->
+        <div class="step skip" data-x="-825" data-y="100" data-z="-400">
+            <img src="img/cornell-box.jpg" class="cornell" />
+        </div>
+
+
+        <!-- Decorations -->
+        <div class="step skip" data-x="-850" data-y="-300" data-z="400">
+            <img src="img/parrot.png" class="parrot" />
+        </div>
+
+        <div class="step skip" data-x="1500" data-y="600" data-z="400">
+            <img src="img/ball.png" class="ball" />
+        </div>
+
+        <div class="step skip" data-x="1500" data-y="400" data-z="500">
+            <img src="img/butterfly.png" class="butterfly" />
+        </div>
+
+        <div class="step skip" data-x="1540" data-y="475" data-z="0">
+            <img src="img/pipe.png" class="pipe" />
+        </div>
+
+
+        <!-- <div class="step skip" data-x="1300" data-y="450" data-z="50">
             <img src="img/butterfly.png" />
         </div>
-        
 
-        <div class="step" data-x="100" data-y="-200" data-z="100">
-            <img src="img/windows-bg.jpg" />
+        <div class="step skip" data-x="1260" data-y="550" data-z="50">
+            <img src="img/ball.png" />
         </div>
 
-        <div class="step skip" data-x="-120" data-y="-400" data-z="150" data-scale="0.5">
-            <img src="img/fan.png" />
-        </div>
-
-        <div class="step skip" data-x="-250" data-y="100" data-z="-200" data-scale="1">
-            <img src="img/cornell-box.jpg" />
-        </div>
-        <div class="step" data-x="-350" data-y="-350" data-z="-180" data-scale="1">
+        <div class="step skip" data-x="-350" data-y="-350" data-z="50" >
             <img src="img/parrot.png" />
         </div>
 
-        <div class="step skip" data-x="0" data-y="0" data-z="-300" data-scale="2">
-            <img src="img/box-frame.png" />
+
+
+        <div class="step" data-x="100" data-y="-200" data-z="0">
+            <img src="img/windows-bg.jpg" />
         </div>
 
-        <div class="step skip" data-x="0" data-y="0" data-z="-500" data-scale="3">
-            <img src="img/astrology.png" />
+        <div class="step skip" data-x="-120" data-y="-400" data-z="20" data-scale="0.5">
+            <img src="img/fan.png" />
         </div>
+
+
+
+
+
+
+
+
+
+        <div class="step skip" data-x="0" data-y="0" data-z="-100" data-scale="3">
+            <img src="img/box.png" />
+        </div> -->
+
+
+
+
+        <!-- <div class="step skip" data-x="0" data-y="0" data-z="-500" data-scale="3">
+            <img src="img/astrology.png" />
+        </div> -->
 
 
 
