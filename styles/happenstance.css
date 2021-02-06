@@ -13,7 +13,7 @@
 #start img {
     width: 500px;
     display: block;
-    border: 500px solid #fff;
+    border: 500px solid #000;
     position: absolute;
     top: 50%;
     left: 50%;
