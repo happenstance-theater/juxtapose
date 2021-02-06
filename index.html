@@ -2,6 +2,7 @@
 
 <head>
     <title>Happenstance Play</title>
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
     <link href="styles/reset.css" rel="stylesheet" />
     <link href="styles/impress-common.css" rel="stylesheet" />
     <link href="styles/happenstance.css" rel="stylesheet" />
@@ -33,10 +34,23 @@
 
         <div id="zoom" class="step" data-x="0" data-y="0" data-z="0" data-scale="3"></div>
 
+        <!-- <div id="building" class="step" data-x="100" data-y="200" data-z="-500" data-scale="1.1">
+            <img src="img/building.png" class="building" />
+        </div> -->
 
-        <!-- Internal BG Objects -->
+
+
+
+
+
+
+        <!-- Background -->
         <div class="step skip" data-x="-825" data-y="100" data-z="-400">
             <img src="img/cornell-box.jpg" class="cornell" />
+        </div>
+
+        <div class="step skip" data-x="600" data-y="-200" data-z="-800" data-scale="2">
+            <img src="img/astrology.jpg" class="astrology" />
         </div>
 
 
@@ -55,6 +69,23 @@
 
         <div class="step skip" data-x="1540" data-y="475" data-z="0">
             <img src="img/pipe.png" class="pipe" />
+        </div>
+
+        <div id="video" class="step" data-x="100" data-y="-100" data-z="1">
+            <video
+              id="my-video"
+              class="video-js"
+              controls
+              preload="auto"
+              width="1000"
+              height="562"
+              poster="img/windows-bg.jpg"
+              data-setup="{}"
+            >
+              <!-- <source src="MY_VIDEO.mp4" type="video/mp4" />
+              <source src="MY_VIDEO.webm" type="video/webm" /> -->
+              <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/window_av/playlist.m3u8" type="application/x-mpegURL">
+            </video>
         </div>
 
 
@@ -152,7 +183,7 @@
         <div id="overview" class="step" data-x="3000" data-y="1500" data-z="0" data-scale="10">
         </div> -->
     </div>
-
+    <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
     <script src="js/impress.js"></script>
     <script>impress().init();</script>
 </body>

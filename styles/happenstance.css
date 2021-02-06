@@ -4,6 +4,12 @@
     height: 1000px;
     /* border: 50px solid green; */
 }
+/* #start.past {
+    display: none;
+}
+#start.prev {
+    display: block;
+} */
 #start img {
     width: 500px;
     display: block;
@@ -29,4 +35,13 @@ img.butterfly {
 
 img.cornell {
     width: 900px;
+}
+
+img.astrology {
+    opacity: 0.5;
+    transform: rotate(50deg);
+}
+
+img.building {
+    width: 1000px;
 }
