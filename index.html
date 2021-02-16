@@ -27,35 +27,74 @@
         data-perspective="1000">
 
 
+        <!-- Landing -->
+        <div id="landing" class="step" data-x="0" data-y=0 data-z="0">
+            <h1>Happenstance</h1>
+        </div>
+
+
         <!-- Start -->
-        <div id="start" class="step" data-x="0" data-y="0" data-z="0" data-scale="6">
+        <div id="start" class="step" data-x="0" data-y="600" data-z="0">
             <img src="img/frame.png" />
         </div>
 
-        <div id="zoom" class="step" data-x="0" data-y="0" data-z="0" data-scale="3"></div>
+
+        <div class="step windows ssm" data-x="0" data-y="1200" data-z="0">
+            <video
+                id="my-video"
+                class="video-js"
+                controls
+                preload="auto"
+                width="1000"
+                height="562"
+                poster="img/windows-bg.jpg"
+                data-setup="{}">
+
+                <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/window_ssm/playlist.m3u8" type="application/x-mpegURL">
+            </video>
+        </div>
+
+        <div class="step windows mlj" data-x="0" data-y="1800" data-z="0">
+            <video
+                id="my-video"
+                class="video-js"
+                controls
+                preload="auto"
+                width="1000"
+                height="562"
+                poster="img/windows-bg.jpg"
+                data-setup="{}">
+
+                <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/window_mlj/playlist.m3u8" type="application/x-mpegURL">
+            </video>
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- <div id="zoom" class="step" data-x="0" data-y="0" data-z="0" data-scale="3"></div> -->
 
         <!-- <div id="building" class="step" data-x="100" data-y="200" data-z="-500" data-scale="1.1">
             <img src="img/building.png" class="building" />
         </div> -->
 
-
-
-
-
-
-
         <!-- Background -->
-        <div class="step skip" data-x="-825" data-y="100" data-z="-400">
+        <!-- <div class="step skip" data-x="-825" data-y="100" data-z="-400">
             <img src="img/cornell-box.jpg" class="cornell" />
         </div>
 
         <div class="step skip" data-x="600" data-y="-200" data-z="-800" data-scale="2">
             <img src="img/astrology.jpg" class="astrology" />
-        </div>
+        </div> -->
 
 
         <!-- Decorations -->
-        <div class="step skip" data-x="-850" data-y="-300" data-z="400">
+        <!-- <div class="step skip" data-x="-850" data-y="-300" data-z="400">
             <img src="img/parrot.png" class="parrot" />
         </div>
 
@@ -69,24 +108,7 @@
 
         <div class="step skip" data-x="1540" data-y="475" data-z="0">
             <img src="img/pipe.png" class="pipe" />
-        </div>
-
-        <div id="video" class="step" data-x="100" data-y="-100" data-z="1">
-            <video
-              id="my-video"
-              class="video-js"
-              controls
-              preload="auto"
-              width="1000"
-              height="562"
-              poster="img/windows-bg.jpg"
-              data-setup="{}"
-            >
-              <!-- <source src="MY_VIDEO.mp4" type="video/mp4" />
-              <source src="MY_VIDEO.webm" type="video/webm" /> -->
-              <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/window_av/playlist.m3u8" type="application/x-mpegURL">
-            </video>
-        </div>
+        </div> -->
 
 
         <!-- <div class="step skip" data-x="1300" data-y="450" data-z="50">
@@ -102,7 +124,6 @@
         </div>
 
 
-
         <div class="step" data-x="100" data-y="-200" data-z="0">
             <img src="img/windows-bg.jpg" />
         </div>
@@ -111,27 +132,14 @@
             <img src="img/fan.png" />
         </div>
 
-
-
-
-
-
-
-
-
         <div class="step skip" data-x="0" data-y="0" data-z="-100" data-scale="3">
             <img src="img/box.png" />
         </div> -->
 
 
-
-
         <!-- <div class="step skip" data-x="0" data-y="0" data-z="-500" data-scale="3">
             <img src="img/astrology.png" />
         </div> -->
-
-
-
 
 
         <!-- <div class="step" data-x="1000" data-y="-1500">

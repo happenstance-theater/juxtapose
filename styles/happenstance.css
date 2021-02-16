@@ -1,47 +1,80 @@
-#start  {
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+}
+
+body {
+    /* min-height: 740px; */
+    background-size: cover;
+    background: url(../img/sky.jpg) no-repeat 50% 25% rgb(132,188,195);
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+/* Steps */
+.step {
     position: relative;
-    /* background: red; */
-    height: 1000px;
-    /* border: 50px solid green; */
+    width: 1000px;
+    height: 562px;
 }
-/* #start.past {
-    display: none;
+
+
+
+
+
+#landing {
+    background: #fff;
 }
-#start.prev {
-    display: block;
-} */
+
+
+#start  {
+}
 #start img {
     width: 500px;
     display: block;
-    border: 500px solid #000;
+    border: 50px solid #fff;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.windows.ssm .vjs-big-play-button {
+    top: 66%;
+    left: 33%;
+}
+
+.windows.mlj .vjs-big-play-button {
+    top: 25%;
+    left: 33%;
+}
+
 
 img.parrot {
     width: 340px;
 }
-
 img.ball {
     width: 160px;
 }
-
 img.butterfly {
     width: 380px;
 }
-
 img.cornell {
     width: 900px;
 }
-
 img.astrology {
     opacity: 0.5;
     transform: rotate(50deg);
 }
-
 img.building {
     width: 1000px;
 }
