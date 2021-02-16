@@ -26,6 +26,12 @@ img {
     width: 1000px;
     height: 562px;
 }
+.step .vid {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 
 
 
@@ -36,7 +42,7 @@ img {
 }
 
 
-#start  {
+/* #start  {
 }
 #start img {
     width: 500px;
@@ -46,23 +52,71 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
-.windows .vid {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
 
-.windows.ssm .vjs-big-play-button {
+/* Windows  */
+.windows .vjs-big-play-button {
     top: 66%;
     left: 33%;
 }
 
-.windows.mlj .vjs-big-play-button {
-    top: 25%;
-    left: 33%;
+
+.concierge button {
+    appearance: none;
+    background: transparent;
+    position: absolute;
+    border: 1px solid #fff;
+    top: 10%;
+    left: 10%;
+    height: 5%;
+    width: 5%;
+    cursor: pointer;
 }
+.concierge button:hover {
+    background: #ffffff11;
+}
+.concierge .phone {
+    left: 78%;
+    top: 51%;
+    height: 15%;
+    width: 10%;
+}
+.concierge .book {
+    left: 62%;
+    top: 72%;
+    height: 7%;
+    width: 14%;
+}
+.concierge .package {
+    left: 52%;
+    top: 54%;
+    height: 11%;
+    width: 9%;
+}
+.concierge .bell {
+    left: 50%;
+    top: 60%;
+    height: 6%;
+    width: 5%;
+}
+.concierge .umbrella {
+    left: 14%;
+    top: 38%;
+    height: 49%;
+    width: 5%;
+}
+.concierge .clock {
+    left: 70%;
+    top: 60%;
+    height: 6%;
+    width: 6%;
+}
+
+
+
+
+
 
 
 img.parrot {
