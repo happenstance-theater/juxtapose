@@ -61,12 +61,14 @@ img {
     left: 33%;
 }
 
-
+.concierge .vid {
+    left: 90%;
+}
 .concierge button {
+    border: 1px solid transparent;
     appearance: none;
     background: transparent;
     position: absolute;
-    border: 1px solid #fff;
     top: 10%;
     left: 10%;
     height: 5%;
@@ -74,7 +76,7 @@ img {
     cursor: pointer;
 }
 .concierge button:hover {
-    background: #ffffff11;
+    border-color: #fff;
 }
 .concierge .phone {
     left: 78%;
