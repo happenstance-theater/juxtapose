@@ -48,6 +48,12 @@ img {
     transform: translate(-50%, -50%);
 }
 
+.windows .vid {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .windows.ssm .vjs-big-play-button {
     top: 66%;
     left: 33%;
