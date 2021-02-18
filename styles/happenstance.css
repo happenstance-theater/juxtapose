@@ -37,7 +37,7 @@ img {
 
 
 
-#landing {
+#landing-page {
     background: #fff;
 }
 
@@ -61,8 +61,19 @@ img {
     left: 33%;
 }
 
-.concierge .vid {
-    left: 90%;
+.concierge .video-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.concierge .vjs-playing {
+    z-index: 99;
+}
+
+.concierge-background {
+    z-index: 9;
+    position: relative;
 }
 .concierge button {
     border: 1px solid transparent;
@@ -75,40 +86,41 @@ img {
     width: 5%;
     cursor: pointer;
 }
+
 .concierge button:hover {
     border-color: #fff;
 }
-.concierge .phone {
+.concierge button.phone {
     left: 78%;
     top: 51%;
     height: 15%;
     width: 10%;
 }
-.concierge .book {
+.concierge button.book {
     left: 62%;
     top: 72%;
     height: 7%;
     width: 14%;
 }
-.concierge .package {
+.concierge button.package {
     left: 52%;
     top: 54%;
     height: 11%;
     width: 9%;
 }
-.concierge .bell {
+.concierge button.bell {
     left: 50%;
     top: 60%;
     height: 6%;
     width: 5%;
 }
-.concierge .umbrella {
+.concierge button.umbrella {
     left: 14%;
     top: 38%;
     height: 49%;
     width: 5%;
 }
-.concierge .clock {
+.concierge button.clock {
     left: 70%;
     top: 60%;
     height: 6%;

@@ -28,7 +28,7 @@
 
 
         <!-- Landing -->
-        <div id="landing" class="step" data-x="0" data-y=0 data-z="0">
+        <div id="landing-page" class="step" data-x="0" data-y=0 data-z="0">
             <h1>Happenstance</h1>
         </div>
 
@@ -39,7 +39,7 @@
         </div> -->
 
 
-        <div id="windows" class="step windows" data-x="0" data-y="1200" data-z="1">
+        <div id="windows-page" class="step windows" data-x="0" data-y="1200" data-z="1">
             <img src="img/windows-bg.jpg" />
 
             <div class="vid">
@@ -123,27 +123,84 @@
         </div>
 
 
-        <div id="concierge" class="step concierge" data-x="0" data-y="2400" data-z="1">
-            <img src="img/concierge.jpg" />
-
-            <button class="phone"></button>
-            <button class="book"></button>
-            <button class="package"></button>
-            <button class="bell"></button>
-            <button class="umbrella"></button>
-            <button class="clock"></button>
-
+        <div id="concierge-page" class="step concierge" data-x="0" data-y="2400" data-z="1">
             <div class="vid">
                 <video
-                    id="concierge"
+                    id="concierge-phone"
                     class="video-js"
                     preload="auto"
                     width="1000"
                     height="562"
+                    controls
                     data-setup="{}">
-
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_phone/playlist.m3u8" type="application/x-mpegURL">
                 </video>
+
+                <video
+                    id="concierge-av"
+                    class="video-js"
+                    preload="auto"
+                    width="1000"
+                    height="562"
+                    controls
+                    data-setup="{}">
+                    <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_av/playlist.m3u8" type="application/x-mpegURL">
+                </video>
+
+                <video
+                    id="concierge-gg"
+                    class="video-js"
+                    preload="auto"
+                    width="1000"
+                    height="562"
+                    controls
+                    data-setup="{}">
+                    <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_gg/playlist.m3u8" type="application/x-mpegURL">
+                </video>
+
+                <video
+                    id="concierge-mlj"
+                    class="video-js"
+                    preload="auto"
+                    width="1000"
+                    height="562"
+                    controls
+                    data-setup="{}">
+                    <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_mlj/playlist.m3u8" type="application/x-mpegURL">
+                </video>
+
+                <video
+                    id="concierge-sot"
+                    class="video-js"
+                    preload="auto"
+                    width="1000"
+                    height="562"
+                    controls
+                    data-setup="{}">
+                    <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_sot/playlist.m3u8" type="application/x-mpegURL">
+                </video>
+
+                <video
+                    id="concierge-ssm"
+                    class="video-js"
+                    preload="auto"
+                    width="1000"
+                    height="562"
+                    controls
+                    data-setup="{}">
+                    <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_ssm/playlist.m3u8" type="application/x-mpegURL">
+                </video>
+            </div>
+
+            <div class="concierge-background">
+                <img src="img/concierge.jpg" />
+
+                <button class="phone"></button>
+                <button class="book"></button>
+                <button class="package"></button>
+                <button class="bell"></button>
+                <button class="umbrella"></button>
+                <button class="clock"></button>
             </div>
         </div>
 
@@ -266,6 +323,7 @@
         <div id="overview" class="step" data-x="3000" data-y="1500" data-z="0" data-scale="10">
         </div> -->
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
     <script src="js/impress.js"></script>
     <script>
@@ -276,7 +334,7 @@
 
 
 
-        // Windows
+        // Windows videos
         var ssm = videojs('windows-ssm');
         var mlj = videojs('windows-mlj');
         var sot = videojs('windows-sot');
@@ -284,35 +342,104 @@
         var gg = videojs('windows-gg');
         var cv = videojs('windows-chari-vari');
 
-        cv.on('ended', function() {
-            this.dispose();
-            prez.next();
-        });
-
-        gg.on('ended', function() {
-            this.dispose();
-            cv.play();
-        });
-
-        av.on('ended', function() {
-            this.dispose();
-            gg.play();
-        });
-
-        sot.on('ended', function() {
-            this.dispose();
-            av.play();
-        });
-
-        mlj.on('ended', function() {
-            this.dispose();
-            sot.play();
-        });
-
+        // String Videos together
         ssm.on('ended', function() {
             this.dispose();
             mlj.play();
         });
+        mlj.on('ended', function() {
+            this.dispose();
+            sot.play();
+        });
+        sot.on('ended', function() {
+            this.dispose();
+            av.play();
+        });
+        av.on('ended', function() {
+            this.dispose();
+            gg.play();
+        });
+        gg.on('ended', function() {
+            this.dispose();
+            cv.play();
+        });
+        cv.on('ended', function() {
+            prez.next(); // advance presentation
+        });
+
+
+        // concierge
+        var phoneVideo = videojs('concierge-phone');
+        var avVideo = videojs('concierge-av');
+        var ggVideo = videojs('concierge-gg');
+        var mljVideo = videojs('concierge-mlj');
+        var sotVideo = videojs('concierge-sot');
+        var ssmVideo = videojs('concierge-ssm');
+
+        var phoneButton = $('button.phone');
+        var bookButton = $('button.book');
+        var packageButton = $('button.package');
+        var bellButton = $('button.bell');
+        var umbrellaButton = $('button.umbrella');
+        var clockButton = $('button.clock');
+
+        clockButton.on('click', function(){
+            ggVideo.play();
+        });
+        ggVideo.on('ended', function() {
+            this.dispose();
+            clockButton.hide();
+        });
+
+        umbrellaButton.on('click', function(){
+            avVideo.play();
+        });
+        avVideo.on('ended', function() {
+            this.dispose();
+            umbrellaButton.hide();
+        });
+
+        bellButton.on('click', function(){
+            sotVideo.play();
+        });
+        sotVideo.on('ended', function() {
+            this.dispose();
+            bellButton.hide();
+        });
+
+        packageButton.on('click', function(){
+            mljVideo.play();
+        });
+        mljVideo.on('ended', function() {
+            this.dispose();
+            packageButton.hide();
+        });
+
+        bookButton.on('click', function(){
+            ssmVideo.play();
+        });
+        ssmVideo.on('ended', function() {
+            this.dispose();
+            bookButton.hide();
+        });
+
+        phoneButton.on('click', function(){
+            phoneVideo.play();
+        });
+        phoneVideo.on('ended', function() {
+            this.dispose();
+            phoneButton.hide();
+        });
+
+
+
+
+
+
+
+
+
+
 
 
 
