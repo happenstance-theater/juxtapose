@@ -131,7 +131,6 @@
                     preload="auto"
                     width="1000"
                     height="562"
-                    controls
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_phone/playlist.m3u8" type="application/x-mpegURL">
                 </video>
@@ -142,7 +141,6 @@
                     preload="auto"
                     width="1000"
                     height="562"
-                    controls
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_av/playlist.m3u8" type="application/x-mpegURL">
                 </video>
@@ -153,7 +151,6 @@
                     preload="auto"
                     width="1000"
                     height="562"
-                    controls
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_gg/playlist.m3u8" type="application/x-mpegURL">
                 </video>
@@ -164,7 +161,6 @@
                     preload="auto"
                     width="1000"
                     height="562"
-                    controls
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_mlj/playlist.m3u8" type="application/x-mpegURL">
                 </video>
@@ -175,7 +171,6 @@
                     preload="auto"
                     width="1000"
                     height="562"
-                    controls
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_sot/playlist.m3u8" type="application/x-mpegURL">
                 </video>
@@ -186,7 +181,6 @@
                     preload="auto"
                     width="1000"
                     height="562"
-                    controls
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_ssm/playlist.m3u8" type="application/x-mpegURL">
                 </video>
@@ -201,7 +195,14 @@
                 <button class="bell"></button>
                 <button class="umbrella"></button>
                 <button class="clock"></button>
+
+                <!-- Keys -->
+                <button class="key key-ssm"></button>
             </div>
+        </div>
+
+        <div id="ssm-page" class="step" data-x="0" data-y="3600" data-z="1">
+            <img src="img/room-ssm.jpg" />
         </div>
 
 
@@ -368,6 +369,10 @@
         });
 
 
+
+
+
+
         // concierge
         var phoneVideo = videojs('concierge-phone');
         var avVideo = videojs('concierge-av');
@@ -383,12 +388,27 @@
         var umbrellaButton = $('button.umbrella');
         var clockButton = $('button.clock');
 
+        var keySSM = $('button.key-ssm');
+
+        var conciergeVideoCount = 0;
+        function countVideos() {
+            conciergeVideoCount++;
+            if (conciergeVideoCount >= 5) {
+                // Last
+                packageButton.on('click', function(){
+                    mljVideo.play();
+                });
+                packageButton.show();
+            }
+        }
+
         clockButton.on('click', function(){
             ggVideo.play();
         });
         ggVideo.on('ended', function() {
             this.dispose();
             clockButton.hide();
+            countVideos();
         });
 
         umbrellaButton.on('click', function(){
@@ -397,6 +417,7 @@
         avVideo.on('ended', function() {
             this.dispose();
             umbrellaButton.hide();
+            countVideos();
         });
 
         bellButton.on('click', function(){
@@ -405,14 +426,7 @@
         sotVideo.on('ended', function() {
             this.dispose();
             bellButton.hide();
-        });
-
-        packageButton.on('click', function(){
-            mljVideo.play();
-        });
-        mljVideo.on('ended', function() {
-            this.dispose();
-            packageButton.hide();
+            countVideos();
         });
 
         bookButton.on('click', function(){
@@ -421,6 +435,7 @@
         ssmVideo.on('ended', function() {
             this.dispose();
             bookButton.hide();
+            countVideos();
         });
 
         phoneButton.on('click', function(){
@@ -429,6 +444,18 @@
         phoneVideo.on('ended', function() {
             this.dispose();
             phoneButton.hide();
+            countVideos();
+
+        });
+
+        // Package goes last
+        mljVideo.on('ended', function() {
+            this.dispose();
+            packageButton.hide();
+            keySSM.on('click', function(){
+                prez.next();
+            });
+            keySSM.show();
         });
 
 
