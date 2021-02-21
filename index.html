@@ -30,6 +30,8 @@
         <!-- Landing -->
         <div id="landing-page" class="step" data-x="0" data-y=0 data-z="0">
             <h1>Happenstance</h1>
+
+            <button id="button-play">Play</button>
         </div>
 
 
@@ -110,7 +112,6 @@
             <div class="vid">
                 <video
                     id="windows-ssm"
-                    controls
                     class="video-js"
                     preload="auto"
                     width="1000"
@@ -201,7 +202,7 @@
             </div>
         </div>
 
-        <div id="ssm-page" class="step" data-x="0" data-y="3600" data-z="1">
+        <div id="ssm-page" class="step" data-x="0" data-y="3000" data-z="1">
             <img src="img/room-ssm.jpg" />
         </div>
 
@@ -330,18 +331,21 @@
     <script>
         // Start Impress
         var prez = impress();
-        prez.init();
-
-
-
-
-        // Windows videos
         var ssm = videojs('windows-ssm');
         var mlj = videojs('windows-mlj');
         var sot = videojs('windows-sot');
         var av = videojs('windows-av');
         var gg = videojs('windows-gg');
         var cv = videojs('windows-chari-vari');
+
+        prez.init();
+
+        var buttonPlay = $('button#button-play');
+        buttonPlay.on('click', function(){
+            prez.next();
+            ssm.play();
+            return false;
+        });
 
         // String Videos together
         ssm.on('ended', function() {
@@ -365,6 +369,7 @@
             cv.play();
         });
         cv.on('ended', function() {
+            this.dispose();
             prez.next(); // advance presentation
         });
 
@@ -451,10 +456,14 @@
         // Package goes last
         mljVideo.on('ended', function() {
             this.dispose();
+
             packageButton.hide();
+
             keySSM.on('click', function(){
                 prez.next();
+                return false;
             });
+
             keySSM.show();
         });
 
