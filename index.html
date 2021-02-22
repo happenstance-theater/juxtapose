@@ -190,19 +190,35 @@
             <div class="concierge-background">
                 <img src="img/concierge.jpg" id="concierge-bg-img" />
 
-                <button class="phone"></button>
-                <button class="package"></button>
-                <button class="bell"></button>
-                <button class="umbrella"></button>
-                <button class="clock"></button>
+                <button class="crg-phone"></button>
+                <button class="crg-package"></button>
+                <button class="crg-bell"></button>
+                <button class="crg-umbrella"></button>
+                <button class="crg-clock"></button>
 
                 <!-- Keys -->
                 <button class="key key-ssm"></button>
             </div>
         </div>
 
-        <div id="ssm-page" class="step" data-x="0" data-y="3600" data-z="1">
-            <img src="img/room-ssm.jpg" />
+        <div id="ssm-page" class="step ssm" data-x="0" data-y="3600" data-z="1">
+            <div class="vid">
+                <video
+                    id="ssm-globe"
+                    class="video-js"
+                    preload="auto"
+                    width="1000"
+                    height="562"
+                    data-setup="{}">
+                    <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/ssm_globe/playlist.m3u8" type="application/x-mpegURL">
+                </video>
+            </div>
+
+            <div class="ssm-background">
+                <img src="img/room-ssm.jpg" />
+
+                <button class="ssm-globe"></button>
+            </div>
         </div>
 
 

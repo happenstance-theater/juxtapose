@@ -4,7 +4,7 @@ prez.init();
 
 
 
-// Tenement Windows
+// Get videos
 var windowVideos = {
     ssm: videojs('windows-ssm'),
     mlj: videojs('windows-mlj'),
@@ -13,6 +13,18 @@ var windowVideos = {
     gg: videojs('windows-gg'),
     cv: videojs('windows-chari-vari')
 };
+var conciergeVideos = {
+    phone: videojs('concierge-phone'),
+    av: videojs('concierge-av'),
+    gg: videojs('concierge-gg'),
+    mlj: videojs('concierge-mlj'),
+    sot: videojs('concierge-sot'),
+    ssm: videojs('concierge-ssm')
+};
+var ssmVideos = {
+    globe: videojs('ssm-globe')
+};
+
 
 
 // First Page Play button
@@ -22,6 +34,9 @@ $('button#button-play').on('click', function(){
     return false;
 });
 
+
+
+// Tenement Windows
 windowVideos.ssm.on('ended', function() {
     this.dispose();
     windowVideos.mlj.play();
@@ -44,34 +59,19 @@ windowVideos.gg.on('ended', function() {
 });
 windowVideos.cv.on('ended', function() {
     this.dispose();
-    conciergeVideos.ssmVideo.play();
+    conciergeVideos.ssm.play();
     prez.next();
 });
 
 
 
-
-
-
-
-
 // Concierge Room
-var conciergeVideos = {
-    phone: videojs('concierge-phone'),
-    av: videojs('concierge-av'),
-    gg: videojs('concierge-gg'),
-    mlj: videojs('concierge-mlj'),
-    sot: videojs('concierge-sot'),
-    ssm: videojs('concierge-ssm')
-};
-
-
 var conciergeVideoCount = 0;
 
-function countVideos() {
+function trackConcierge() {
     if (conciergeVideoCount < 4) return;
 
-    $('button.package').on('click', function(){
+    $('button.crg-package').on('click', function(){
         conciergeVideos.mlj.play();
         $(this).hide();
 
@@ -80,50 +80,51 @@ function countVideos() {
         }, 3000)
     });
 
-    $('button.package').show();
+    $('button.crg-package').show();
 }
 
-$('button.clock').on('click', function(){
+$('button.crg-clock').on('click', function(){
     conciergeVideos.gg.play();
     $(this).hide();
 });
-$('button.umbrella').on('click', function(){
+$('button.crg-umbrella').on('click', function(){
     conciergeVideos.av.play();
     $(this).hide();
 });
-$('button.bell').on('click', function(){
+$('button.crg-bell').on('click', function(){
     conciergeVideos.sot.play();
     $(this).hide();
 });
-$('button.phone').on('click', function(){
+$('button.crg-phone').on('click', function(){
     conciergeVideos.phone.play();
     $(this).hide();
 });
 
 conciergeVideos.ssm.on('ended', function() {
     this.dispose();
-    countVideos();
 });
+
 conciergeVideos.gg.on('ended', function() {
     this.dispose();
     conciergeVideoCount++;
-    countVideos();
+    trackConcierge();
 });
 conciergeVideos.av.on('ended', function() {
     this.dispose();
     conciergeVideoCount++;
-    countVideos();
+    trackConcierge();
 });
 conciergeVideos.phone.on('ended', function() {
     this.dispose();
     conciergeVideoCount++;
-    countVideos();
+    trackConcierge();
 });
 conciergeVideos.sot.on('ended', function() {
     this.dispose();
     conciergeVideoCount++;
-    countVideos();
+    trackConcierge();
 });
+
 conciergeVideos.mlj.on('ended', function() {
     this.dispose();
 
@@ -133,4 +134,25 @@ conciergeVideos.mlj.on('ended', function() {
     });
 
     $('button.key-ssm').show();
+});
+
+
+
+// SSM
+var ssmVideoCount = 0;
+
+function trackSSM() {
+    if (ssmVideoCount < 4) return;
+    // Do something?
+}
+
+$('button.ssm-globe').on('click', function(){
+    ssmVideos.globe.play();
+    $(this).hide();
+});
+
+conciergeVideos.gg.on('ended', function() {
+    this.dispose();
+    ssmVideoCount++;
+    trackSSM();
 });
