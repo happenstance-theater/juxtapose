@@ -69,7 +69,7 @@ var conciergeVideos = {
 var conciergeVideoCount = 0;
 
 function countVideos() {
-    if (conciergeVideoCount < 5) return;
+    if (conciergeVideoCount < 4) return;
 
     $('button.package').on('click', function(){
         conciergeVideos.mlj.play();
@@ -102,7 +102,6 @@ $('button.phone').on('click', function(){
 
 conciergeVideos.ssm.on('ended', function() {
     this.dispose();
-    conciergeVideoCount++;
     countVideos();
 });
 conciergeVideos.gg.on('ended', function() {
