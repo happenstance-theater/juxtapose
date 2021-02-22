@@ -188,10 +188,9 @@
             </div>
 
             <div class="concierge-background">
-                <img src="img/concierge.jpg" />
+                <img src="img/concierge.jpg" id="concierge-bg-img" />
 
                 <button class="phone"></button>
-                <button class="book"></button>
                 <button class="package"></button>
                 <button class="bell"></button>
                 <button class="umbrella"></button>
@@ -340,10 +339,9 @@
 
         prez.init();
 
-        var buttonPlay = $('button#button-play');
-        buttonPlay.on('click', function(){
-            prez.next();
+        $('button#button-play').on('click', function(){
             ssm.play();
+            prez.next();
             return false;
         });
 
@@ -370,6 +368,7 @@
         });
         cv.on('ended', function() {
             this.dispose();
+            ssmVideo.play();
             prez.next(); // advance presentation
         });
 
@@ -385,86 +384,81 @@
         var mljVideo = videojs('concierge-mlj');
         var sotVideo = videojs('concierge-sot');
         var ssmVideo = videojs('concierge-ssm');
-
-        var phoneButton = $('button.phone');
-        var bookButton = $('button.book');
-        var packageButton = $('button.package');
-        var bellButton = $('button.bell');
-        var umbrellaButton = $('button.umbrella');
-        var clockButton = $('button.clock');
-
-        var keySSM = $('button.key-ssm');
-
         var conciergeVideoCount = 0;
+
+
         function countVideos() {
-            conciergeVideoCount++;
-            if (conciergeVideoCount >= 5) {
-                // Last
-                packageButton.on('click', function(){
-                    mljVideo.play();
-                });
-                packageButton.show();
-            }
+            if (conciergeVideoCount < 5) return;
+
+            $('button.package').on('click', function(){
+                mljVideo.play();
+                $(this).hide();
+
+                setTimeout(function(){
+                    $('#concierge-bg-img').attr('src', 'img/concierge-no-package.jpg');
+                }, 3000)
+            });
+
+            $('button.package').show();
         }
 
-        clockButton.on('click', function(){
+
+
+        $('button.clock').on('click', function(){
             ggVideo.play();
+            $(this).hide();
+        });
+        $('button.umbrella').on('click', function(){
+            avVideo.play();
+            $(this).hide();
+        });
+        $('button.bell').on('click', function(){
+            sotVideo.play();
+            $(this).hide();
+        });
+        $('button.phone').on('click', function(){
+            phoneVideo.play();
+            $(this).hide();
+        });
+
+
+        ssmVideo.on('ended', function() {
+            this.dispose();
+            conciergeVideoCount++;
+            countVideos();
         });
         ggVideo.on('ended', function() {
             this.dispose();
-            clockButton.hide();
+            conciergeVideoCount++;
             countVideos();
-        });
-
-        umbrellaButton.on('click', function(){
-            avVideo.play();
         });
         avVideo.on('ended', function() {
             this.dispose();
-            umbrellaButton.hide();
+            conciergeVideoCount++;
             countVideos();
-        });
-
-        bellButton.on('click', function(){
-            sotVideo.play();
-        });
-        sotVideo.on('ended', function() {
-            this.dispose();
-            bellButton.hide();
-            countVideos();
-        });
-
-        bookButton.on('click', function(){
-            ssmVideo.play();
-        });
-        ssmVideo.on('ended', function() {
-            this.dispose();
-            bookButton.hide();
-            countVideos();
-        });
-
-        phoneButton.on('click', function(){
-            phoneVideo.play();
         });
         phoneVideo.on('ended', function() {
             this.dispose();
-            phoneButton.hide();
+            conciergeVideoCount++;
             countVideos();
-
+        });
+        sotVideo.on('ended', function() {
+            this.dispose();
+            conciergeVideoCount++;
+            countVideos();
         });
 
         // Package goes last
         mljVideo.on('ended', function() {
             this.dispose();
 
-            packageButton.hide();
-
-            keySSM.on('click', function(){
+            $('button.key-ssm').on('click', function(){
                 prez.next();
                 return false;
             });
 
-            keySSM.show();
+            $('button.key-ssm').show();
+
         });
 
 
