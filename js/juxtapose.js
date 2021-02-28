@@ -22,7 +22,12 @@ var conciergeVideos = {
     ssm: videojs('concierge-ssm')
 };
 var ssmVideos = {
-    globe: videojs('ssm-globe')
+    globe: videojs('ssm-globe'),
+    books: videojs('ssm-books'),
+    gramaphone: videojs('ssm-gramaphone'),
+    box: videojs('ssm-box'),
+    cup: videojs('ssm-cup'),
+    mannequin: videojs('ssm-mannequin')
 };
 
 
@@ -138,21 +143,52 @@ conciergeVideos.mlj.on('ended', function() {
 
 
 
-// SSM
-var ssmVideoCount = 0;
 
-function trackSSM() {
-    if (ssmVideoCount < 4) return;
-    // Do something?
-}
+
+
+// SSM
 
 $('button.ssm-globe').on('click', function(){
     ssmVideos.globe.play();
     $(this).hide();
 });
+$('button.ssm-books').on('click', function(){
+    ssmVideos.books.play();
+    $(this).hide();
+});
+$('button.ssm-gramaphone').on('click', function(){
+    ssmVideos.gramaphone.play();
+    $(this).hide();
+});
+$('button.ssm-box').on('click', function(){
+    ssmVideos.box.play();
+    $(this).hide();
+});
+$('button.ssm-cup').on('click', function(){
+    ssmVideos.cup.play();
+    $(this).hide();
+});
+$('button.ssm-mannequin').on('click', function(){
+    ssmVideos.mannequin.play();
+    $(this).hide();
+});
 
-conciergeVideos.gg.on('ended', function() {
+
+ssmVideos.globe.on('ended', function() {
     this.dispose();
-    ssmVideoCount++;
-    trackSSM();
+});
+ssmVideos.books.on('ended', function() {
+    this.dispose();
+});
+ssmVideos.gramaphone.on('ended', function() {
+    this.dispose();
+});
+ssmVideos.box.on('ended', function() {
+    this.dispose();
+});
+ssmVideos.cup.on('ended', function() {
+    this.dispose();
+});
+ssmVideos.mannequin.on('ended', function() {
+    this.dispose();
 });

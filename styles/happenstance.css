@@ -182,6 +182,37 @@ img {
     height: 13%;
     width: 8%;
 }
+.ssm button.ssm-gramaphone {
+    top: 39%;
+    left: 63%;
+    height: 28%;
+    width: 16%;
+}
+.ssm button.ssm-books {
+    top: 30%;
+    left: 46%;
+    height: 12%;
+    width: 11%;
+}
+.ssm button.ssm-box {
+    top: 14%;
+    left: 43%;
+    height: 14%;
+    width: 11%;
+}
+.ssm button.ssm-cup {
+    top: 61%;
+    left: 49%;
+    height: 7%;
+    width: 8%;
+}
+.ssm button.ssm-mannequin {
+    top: 49%;
+    left: 83.5%;
+    height: 35%;
+    width: 9.5%;
+}
+
 
 
 
