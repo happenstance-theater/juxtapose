@@ -29,6 +29,17 @@ var ssmVideos = {
     cup: videojs('ssm-cup'),
     mannequin: videojs('ssm-mannequin')
 };
+var ggVideos = {
+    dowel: videojs('gg-dowel'),
+    // bowl: videojs('gg-bowl'),
+    // goblet: videojs('gg-goblet'),
+    // sand: videojs('gg-sand'),
+    // constellationLow: videojs('gg-constellation-low'),
+    // symbol: videojs('gg-symbol'),
+    // moon: videojs('gg-moon'),
+    // constellationHigh: videojs('gg-constellation-high'),
+    // marble: videojs('gg-marble')
+};
 
 
 
@@ -190,5 +201,16 @@ ssmVideos.cup.on('ended', function() {
     this.dispose();
 });
 ssmVideos.mannequin.on('ended', function() {
+    this.dispose();
+});
+
+
+
+// GG
+$('button.gg-dowel').on('click', function(){
+    ggVideos.dowel.play();
+    $(this).hide();
+});
+ggVideos.dowel.on('ended', function() {
     this.dispose();
 });
