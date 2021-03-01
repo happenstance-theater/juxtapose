@@ -30,7 +30,7 @@ var ssmVideos = {
     mannequin: videojs('ssm-mannequin')
 };
 var ggVideos = {
-    dowel: videojs('gg-dowel'),
+    // dowel: videojs('gg-dowel'),
     // bowl: videojs('gg-bowl'),
     // goblet: videojs('gg-goblet'),
     // sand: videojs('gg-sand'),
@@ -207,10 +207,10 @@ ssmVideos.mannequin.on('ended', function() {
 
 
 // GG
-$('button.gg-dowel').on('click', function(){
-    ggVideos.dowel.play();
-    $(this).hide();
-});
-ggVideos.dowel.on('ended', function() {
-    this.dispose();
-});
+// $('button.gg-dowel').on('click', function(){
+//     ggVideos.dowel.play();
+//     $(this).hide();
+// });
+// ggVideos.dowel.on('ended', function() {
+//     this.dispose();
+// });
