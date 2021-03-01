@@ -41,6 +41,16 @@ var ggVideos = {
     // marble: videojs('gg-marble')
 };
 
+var sotVideos = {
+    footlight: videojs('sot-footlight'),
+    lobster: videojs('sot-lobster'),
+    cherub: videojs('sot-cherub'),
+    bottle: videojs('sot-bottle'),
+    ballerina: videojs('sot-ballerina'),
+    fish: videojs('sot-fish'),
+    rose: videojs('sot-rose')
+};
+
 
 
 // First Page Play button
@@ -214,3 +224,57 @@ ssmVideos.mannequin.on('ended', function() {
 // ggVideos.dowel.on('ended', function() {
 //     this.dispose();
 // });
+
+
+// SOT
+$('button.sot-footlight').on('click', function(){
+    sotVideos.footlight.play();
+    $(this).hide();
+});
+$('button.sot-lobster').on('click', function(){
+    sotVideos.lobster.play();
+    $(this).hide();
+});
+$('button.sot-cherub').on('click', function(){
+    sotVideos.cherub.play();
+    $(this).hide();
+});
+$('button.sot-bottle').on('click', function(){
+    sotVideos.bottle.play();
+    $(this).hide();
+});
+$('button.sot-ballerina').on('click', function(){
+    sotVideos.ballerina.play();
+    $(this).hide();
+});
+$('button.sot-fish').on('click', function(){
+    sotVideos.fish.play();
+    $(this).hide();
+});
+$('button.sot-rose').on('click', function(){
+    sotVideos.rose.play();
+    $(this).hide();
+});
+
+
+sotVideos.footlight.on('ended', function() {
+    this.dispose();
+});
+sotVideos.lobster.on('ended', function() {
+    this.dispose();
+});
+sotVideos.cherub.on('ended', function() {
+    this.dispose();
+});
+sotVideos.bottle.on('ended', function() {
+    this.dispose();
+});
+sotVideos.ballerina.on('ended', function() {
+    this.dispose();
+});
+sotVideos.fish.on('ended', function() {
+    this.dispose();
+});
+sotVideos.rose.on('ended', function() {
+    this.dispose();
+});
