@@ -31,14 +31,14 @@ var ssmVideos = {
 };
 var ggVideos = {
     dowel: videojs('gg-dowel'),
-    // bowl: videojs('gg-bowl'),
-    // goblet: videojs('gg-goblet'),
-    // sand: videojs('gg-sand'),
-    // constellationLow: videojs('gg-constellation-low'),
-    // symbol: videojs('gg-symbol'),
-    // moon: videojs('gg-moon'),
-    // constellationHigh: videojs('gg-constellation-high'),
-    // marble: videojs('gg-marble')
+    bowl: videojs('gg-bowl'),
+    goblet: videojs('gg-goblet'),
+    sand: videojs('gg-sand'),
+    constellationLow: videojs('gg-constellation-low'),
+    symbol: videojs('gg-symbol'),
+    moon: videojs('gg-moon'),
+    constellationHigh: videojs('gg-constellation-high'),
+    marble: videojs('gg-marble')
 };
 
 var sotVideos = {
@@ -49,6 +49,15 @@ var sotVideos = {
     ballerina: videojs('sot-ballerina'),
     fish: videojs('sot-fish'),
     rose: videojs('sot-rose')
+};
+
+var mljVideos = {
+    turtle: videojs('mlj-turtle'),
+    feather: videojs('mlj-feather'),
+    skull: videojs('mlj-skull'),
+    binoculars: videojs('mlj-binoculars'),
+    egg: videojs('mlj-egg'),
+    shell: videojs('mlj-shell')
 };
 
 
@@ -221,9 +230,68 @@ $('button.gg-dowel').on('click', function(){
     ggVideos.dowel.play();
     $(this).hide();
 });
+$('button.gg-bowl').on('click', function(){
+    ggVideos.bowl.play();
+    $(this).hide();
+});
+$('button.gg-goblet').on('click', function(){
+    ggVideos.goblet.play();
+    $(this).hide();
+});
+$('button.gg-sand').on('click', function(){
+    ggVideos.sand.play();
+    $(this).hide();
+});
+$('button.gg-moon').on('click', function(){
+    ggVideos.moon.play();
+    $(this).hide();
+});
+$('button.gg-symbol').on('click', function(){
+    ggVideos.symbol.play();
+    $(this).hide();
+});
+$('button.gg-marble').on('click', function(){
+    ggVideos.marble.play();
+    $(this).hide();
+});
+$('button.gg-constellation-high').on('click', function(){
+    ggVideos.constellationHigh.play();
+    $(this).hide();
+});
+$('button.gg-constellation-low').on('click', function(){
+    ggVideos.constellationLow.play();
+    $(this).hide();
+});
+
 ggVideos.dowel.on('ended', function() {
     this.dispose();
 });
+ggVideos.bowl.on('ended', function() {
+    this.dispose();
+});
+ggVideos.goblet.on('ended', function() {
+    this.dispose();
+});
+ggVideos.dowel.on('ended', function() {
+    this.dispose();
+});
+ggVideos.moon.on('ended', function() {
+    this.dispose();
+});
+ggVideos.symbol.on('ended', function() {
+    this.dispose();
+});
+ggVideos.marble.on('ended', function() {
+    this.dispose();
+});
+ggVideos.constellationHigh.on('ended', function() {
+    this.dispose();
+});
+ggVideos.constellationLow.on('ended', function() {
+    this.dispose();
+});
+
+
 
 
 // SOT
@@ -276,5 +344,54 @@ sotVideos.fish.on('ended', function() {
     this.dispose();
 });
 sotVideos.rose.on('ended', function() {
+    this.dispose();
+});
+
+
+
+
+// MLJ
+$('button.mlj-turtle').on('click', function(){
+    mljVideos.turtle.play();
+    $(this).hide();
+});
+$('button.mlj-shell').on('click', function(){
+    mljVideos.shell.play();
+    $(this).hide();
+});
+$('button.mlj-skull').on('click', function(){
+    mljVideos.skull.play();
+    $(this).hide();
+});
+$('button.mlj-binoculars').on('click', function(){
+    mljVideos.binoculars.play();
+    $(this).hide();
+});
+$('button.mlj-feather').on('click', function(){
+    mljVideos.feather.play();
+    $(this).hide();
+});
+$('button.mlj-egg').on('click', function(){
+    mljVideos.egg.play();
+    $(this).hide();
+});
+
+
+mljVideos.turtle.on('ended', function() {
+    this.dispose();
+});
+mljVideos.shell.on('ended', function() {
+    this.dispose();
+});
+mljVideos.skull.on('ended', function() {
+    this.dispose();
+});
+mljVideos.binoculars.on('ended', function() {
+    this.dispose();
+});
+mljVideos.feather.on('ended', function() {
+    this.dispose();
+});
+mljVideos.egg.on('ended', function() {
     this.dispose();
 });

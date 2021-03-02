@@ -372,6 +372,70 @@ img {
 
 
 
+.mlj .video-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.mlj .vjs-playing {
+    z-index: 99;
+}
+.mlj-background {
+    z-index: 9;
+    position: relative;
+}
+.mlj button {
+    border-radius: 5px;
+    animation: 3s linear 3s infinite running pulse;
+    border: 1px solid transparent;
+    background-color: rgba(255,255,255,0);
+    appearance: none;
+    position: absolute;
+    cursor: pointer;
+}
+.mlj button:hover {
+    border-color: #fff !important;
+    background-color: rgba(255,255,255,0.2);
+}
+.mlj button.mlj-turtle {
+    top: 50%;
+    left: 54%;
+    height: 13%;
+    width: 12%;
+}
+.mlj button.mlj-egg {
+    top: 47%;
+    left: 68%;
+    height: 15%;
+    width: 7%;
+}
+.mlj button.mlj-feather {
+    top: 11%;
+    left: 27%;
+    height: 19%;
+    width: 8%;
+}
+.mlj button.mlj-skull {
+    top: 80%;
+    left: 46%;
+    height: 15%;
+    width: 8%;
+}
+.mlj button.mlj-shell {
+    top: 41%;
+    left: 23%;
+    height: 22%;
+    width: 12%;
+}
+.mlj button.mlj-binoculars {
+    top: 23%;
+    left: 65%;
+    height: 13%;
+    width: 7%;
+}
+
+
+
 /*
 
 img.parrot {
