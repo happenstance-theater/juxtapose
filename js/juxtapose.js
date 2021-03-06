@@ -14,9 +14,13 @@ prez.init();
 
 
 
-function CastRoom(name, matrix) {
+
+
+
+
+function CastRoom(name, slugs) {
     this.name = name;
-    this.matrix = matrix;
+    this.slugs = slugs;
 
     this.setup = function() {
         var self = this;
@@ -26,12 +30,12 @@ function CastRoom(name, matrix) {
         $('#videos-render-' + this.name).html(this.videos);
 
         // Build Video Interaction
-        _.each(self.matrix, function(value, key){
+        _.each(self.slugs, function(slug){
             // Instantiate Player
-            var video = videojs(value);
+            var video = videojs(slug);
 
             // Button Listener
-            $('button.' + value).on('click', function(){
+            $('button.' + slug).on('click', function(){
                 video.play();
                 $(this).hide();
             });
@@ -43,68 +47,6 @@ function CastRoom(name, matrix) {
         });
     };
 }
-
-
-var av = new CastRoom('av', {
-    portrait: 'av-portrait',
-    scissors: 'av-scissors',
-    coaster: 'av-coaster',
-    marblesWall: 'av-marbles-wall',
-    marblesJar: 'av-marbles-jar',
-    map: 'av-map',
-    wood: 'av-wood'
-});
-// av.setup();
-
-
-var ssm = new CastRoom('ssm', {
-    globe: 'ssm-globe',
-    books: 'ssm-books',
-    gramaphone: 'ssm-gramaphone',
-    box: 'ssm-box',
-    cup: 'ssm-cup',
-    mannequin: 'ssm-mannequin'
-});
-// ssm.setup();
-
-
-var gg = new CastRoom('gg', {
-    dowel: 'gg-dowel',
-    bowl: 'gg-bowl',
-    goblet: 'gg-goblet',
-    sand: 'gg-sand',
-    constellationLow: 'gg-constellation-low',
-    symbol: 'gg-symbol',
-    moon: 'gg-moon',
-    constellationHigh: 'gg-constellation-high',
-    marble: 'gg-marble'
-});
-// gg.setup();
-
-
-var sot = new CastRoom('sot', {
-    footlight: 'sot-footlight',
-    lobster: 'sot-lobster',
-    cherub: 'sot-cherub',
-    bottle: 'sot-bottle',
-    ballerina: 'sot-ballerina',
-    fish: 'sot-fish',
-    rose: 'sot-rose'
-});
-// sot.setup();
-
-
-var mlj = new CastRoom('mlj', {
-    turtle: 'mlj-turtle',
-    feather: 'mlj-feather',
-    skull: 'mlj-skull',
-    binoculars: 'mlj-binoculars',
-    egg: 'mlj-egg',
-    shell: 'mlj-shell'
-});
-// mlj.setup();
-
-
 
 
 
@@ -160,13 +102,7 @@ var mlj = new CastRoom('mlj', {
 // });
 
 
-
-
-
-
-
-// Concierge Room
-
+//
 // var conciergeVideos = {
 //     phone: videojs('concierge-phone'),
 //     av: videojs('concierge-av'),
@@ -175,9 +111,9 @@ var mlj = new CastRoom('mlj', {
 //     sot: videojs('concierge-sot'),
 //     ssm: videojs('concierge-ssm')
 // };
-
+//
 // var conciergeVideoCount = 0;
-
+//
 // function trackConcierge() {
 //     if (conciergeVideoCount < 4) return;
 //
@@ -245,3 +181,109 @@ var mlj = new CastRoom('mlj', {
 //
 //     $('button.key-ssm').show();
 // });
+
+
+
+
+
+
+
+
+
+
+// Keys
+function KeyRoom(name, matrix) {
+    this.name = name;
+    this.matrix = {
+
+    };
+
+    this.setup = function() {
+        var self = this;
+
+        // Build Video Interaction
+        // _.each(self.matrix, function(value, key){
+        //     // Instantiate Player
+        //     var video = videojs(value);
+        //
+        //     // Button Listener
+        //     $('button.' + value).on('click', function(){
+        //         video.play();
+        //         $(this).hide();
+        //     });
+        //
+        //     // Dispose when done
+        //     video.on('ended', function() {
+        //         this.dispose();
+        //     });
+        // });
+    };
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var ssm = new CastRoom('ssm', [
+    'ssm-globe',
+    'ssm-books',
+    'ssm-gramaphone',
+    'ssm-box',
+    'ssm-cup',
+    'ssm-mannequin'
+]);
+// ssm.setup();
+
+var gg = new CastRoom('gg', [
+    'gg-dowel',
+    'gg-bowl',
+    'gg-goblet',
+    'gg-sand',
+    'gg-constellation-low',
+    'gg-symbol',
+    'gg-moon',
+    'gg-constellation-high',
+    'gg-marble'
+]);
+// gg.setup();
+
+var sot = new CastRoom('sot', [
+    'sot-footlight',
+    'sot-lobster',
+    'sot-cherub',
+    'sot-bottle',
+    'sot-ballerina',
+    'sot-fish',
+    'sot-rose'
+]);
+// sot.setup();
+
+var mlj = new CastRoom('mlj', [
+    'mlj-turtle',
+    'mlj-feather',
+    'mlj-skull',
+    'mlj-binoculars',
+    'mlj-egg',
+    'mlj-shell'
+]);
+// mlj.setup();
+
+var av = new CastRoom('av', [
+    'av-portrait',
+    'av-scissors',
+    'av-coaster',
+    'av-marbles-wall',
+    'av-marbles-jar',
+    'av-map',
+    'av-wood'
+]);
+// av.setup();
