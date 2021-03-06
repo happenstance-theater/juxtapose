@@ -162,6 +162,8 @@ prez.init();
 function CastRoom(name, slugs) {
     this.name = name;
     this.slugs = slugs;
+    this.totalVideoCount = this.slugs.length;
+    this.playedVideoCount = 0;
 
     this.setup = function() {
         var self = this;
@@ -184,8 +186,15 @@ function CastRoom(name, slugs) {
             // Dispose when done
             video.on('ended', function() {
                 this.dispose();
+                self.playedVideoCount++;
+                self.returnToKeyRoom();
             });
         });
+    };
+
+    this.returnToKeyRoom = function() {
+        if (this.playedVideoCount < this.totalVideoCount) return;
+        prez.goto('keys-page');
     };
 }
 
