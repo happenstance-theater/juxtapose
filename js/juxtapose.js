@@ -162,15 +162,17 @@ prez.init();
 function CastRoom(name, slugs) {
     this.name = name;
     this.slugs = slugs;
-    this.totalVideoCount = this.slugs.length;
     this.playedVideoCount = 0;
+    this.totalVideoCount = this.slugs.length;
+    this.videos = $('script#videos-html-' + this.name).html();
+    this.buttons = $('script#buttons-html-' + this.name).html();
 
     this.setup = function() {
         var self = this;
 
-        // Render Video HTML
-        this.videos = $('script#videos-html-' + this.name).html();
+        // Template HTML
         $('#videos-render-' + this.name).html(this.videos);
+        $('.' + this.name + '-background').append(this.buttons);
 
         // Build Video Interaction
         _.each(self.slugs, function(slug){
@@ -195,6 +197,7 @@ function CastRoom(name, slugs) {
     this.returnToKeyRoom = function() {
         if (this.playedVideoCount < this.totalVideoCount) return;
         prez.goto('keys-page');
+        this.playedVideoCount = 0;
     };
 }
 
