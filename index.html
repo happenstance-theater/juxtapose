@@ -541,7 +541,23 @@
 
 
         <div id="av-page" class="step av" data-x="0" data-y="7200" data-z="1">
-            <div class="vid">
+            <div class="vid" id="videos-render-av">
+                <!-- Videos render here -->
+            </div>
+
+            <div class="av-background">
+                <img src="img/room-av.jpg" />
+
+                <button class="av-portrait"></button>
+                <button class="av-scissors"></button>
+                <button class="av-coaster"></button>
+                <button class="av-marbles-wall"></button>
+                <button class="av-marbles-jar"></button>
+                <button class="av-map"></button>
+                <button class="av-wood"></button>
+            </div>
+
+            <script id="videos-html-av" type="text/template">
                 <video
                     id="av-portrait"
                     class="video-js"
@@ -605,19 +621,7 @@
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/av_lever/playlist.m3u8" type="application/x-mpegURL">
                 </video>
-            </div>
-
-            <div class="av-background">
-                <img src="img/room-av.jpg" />
-
-                <button class="av-portrait"></button>
-                <button class="av-scissors"></button>
-                <button class="av-coaster"></button>
-                <button class="av-marbles-wall"></button>
-                <button class="av-marbles-jar"></button>
-                <button class="av-map"></button>
-                <button class="av-wood"></button>
-            </div>
+            </script>
         </div>
 
 

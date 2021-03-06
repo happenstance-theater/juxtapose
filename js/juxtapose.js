@@ -14,30 +14,18 @@ prez.init();
 
 
 
-
-// function User(name) {
-//     this.name = name;
-// }
-// User.prototype.print = function(){
-//     console.log(this.name);
-// }
-// var user = new User('Kunal');
-// console.log(user);
-
-
-
-
 function Room(name, matrix) {
     this.name = name;
     this.matrix = matrix;
-    this.template = '';
 
     this.setup = function() {
         var self = this;
 
-        // Render Template
+        // Render Video HTML
+        this.videos = $('script#videos-html-' + this.name).html();
+        $('#videos-render-' + this.name).html(this.videos);
 
-        // Build Videos
+        // Build Video Interaction
         _.each(self.matrix, function(value, key){
             // Instantiate Player
             var video = videojs(value);
@@ -56,8 +44,6 @@ function Room(name, matrix) {
     };
 }
 
-
-
 var av = new Room('av', {
     portrait: 'av-portrait',
     scissors: 'av-scissors',
@@ -67,7 +53,8 @@ var av = new Room('av', {
     map: 'av-map',
     wood: 'av-wood'
 });
-av.setup();
+
+// av.setup();
 
 
 
