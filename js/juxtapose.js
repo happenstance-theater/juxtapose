@@ -4,76 +4,6 @@ prez.init();
 
 
 
-// Get videos
-var windowVideos = {
-    // ssm: videojs('windows-ssm'),
-    // mlj: videojs('windows-mlj'),
-    // sot: videojs('windows-sot'),
-    // av: videojs('windows-av'),
-    // gg: videojs('windows-gg'),
-    // cv: videojs('windows-chari-vari')
-};
-var conciergeVideos = {
-    // phone: videojs('concierge-phone'),
-    // av: videojs('concierge-av'),
-    // gg: videojs('concierge-gg'),
-    // mlj: videojs('concierge-mlj'),
-    // sot: videojs('concierge-sot'),
-    // ssm: videojs('concierge-ssm')
-};
-var ssmVideos = {
-    // globe: videojs('ssm-globe'),
-    // books: videojs('ssm-books'),
-    // gramaphone: videojs('ssm-gramaphone'),
-    // box: videojs('ssm-box'),
-    // cup: videojs('ssm-cup'),
-    // mannequin: videojs('ssm-mannequin')
-};
-var ggVideos = {
-//     dowel: videojs('gg-dowel'),
-//     bowl: videojs('gg-bowl'),
-//     goblet: videojs('gg-goblet'),
-//     sand: videojs('gg-sand'),
-//     constellationLow: videojs('gg-constellation-low'),
-//     symbol: videojs('gg-symbol'),
-//     moon: videojs('gg-moon'),
-//     constellationHigh: videojs('gg-constellation-high'),
-//     marble: videojs('gg-marble')
-};
-
-var sotVideos = {
-    // footlight: videojs('sot-footlight'),
-    // lobster: videojs('sot-lobster'),
-    // cherub: videojs('sot-cherub'),
-    // bottle: videojs('sot-bottle'),
-    // ballerina: videojs('sot-ballerina'),
-    // fish: videojs('sot-fish'),
-    // rose: videojs('sot-rose')
-};
-
-var mljVideos = {
-    // turtle: videojs('mlj-turtle'),
-    // feather: videojs('mlj-feather'),
-    // skull: videojs('mlj-skull'),
-    // binoculars: videojs('mlj-binoculars'),
-    // egg: videojs('mlj-egg'),
-    // shell: videojs('mlj-shell')
-};
-
-var avVideos = {
-    portrait: videojs('av-portrait'),
-    scissors: videojs('av-scissors'),
-    coaster: videojs('av-coaster'),
-    marblesWall: videojs('av-marbles-wall'),
-    marblesJar: videojs('av-marbles-jar'),
-    map: videojs('av-map'),
-    wood: videojs('av-wood')
-};
-
-
-
-
-
 // First Page Play button
 // $('button#button-play').on('click', function(){
 //     windowVideos.ssm.play();
@@ -85,7 +15,160 @@ var avVideos = {
 
 
 
+// function User(name) {
+//     this.name = name;
+// }
+// User.prototype.print = function(){
+//     console.log(this.name);
+// }
+// var user = new User('Kunal');
+// console.log(user);
+
+
+
+
+function Room(name, matrix) {
+    this.name = name;
+    this.matrix = matrix;
+    this.template = '';
+
+    this.setup = function() {
+        var self = this;
+
+        // Render Template
+
+        // Build Videos
+        _.each(self.matrix, function(value, key){
+            // Instantiate Player
+            var video = videojs(value);
+
+            // Button Listener
+            $('button.' + value).on('click', function(){
+                video.play();
+                $(this).hide();
+            });
+
+            // Dispose when done
+            video.on('ended', function() {
+                this.dispose();
+            });
+        });
+    };
+}
+
+
+
+var av = new Room('av', {
+    portrait: 'av-portrait',
+    scissors: 'av-scissors',
+    coaster: 'av-coaster',
+    marblesWall: 'av-marbles-wall',
+    marblesJar: 'av-marbles-jar',
+    map: 'av-map',
+    wood: 'av-wood'
+});
+av.setup();
+
+
+
+
+// AV
+// var avVideos = {
+//     portrait: videojs('av-portrait'),
+//     scissors: videojs('av-scissors'),
+//     coaster: videojs('av-coaster'),
+//     marblesWall: videojs('av-marbles-wall'),
+//     marblesJar: videojs('av-marbles-jar'),
+//     map: videojs('av-map'),
+//     wood: videojs('av-wood')
+// };
+
+// $('button.av-portrait').on('click', function(){
+//     avVideos.portrait.play();
+//     $(this).hide();
+// });
+// $('button.av-scissors').on('click', function(){
+//     avVideos.scissors.play();
+//     $(this).hide();
+// });
+// $('button.av-coaster').on('click', function(){
+//     avVideos.coaster.play();
+//     $(this).hide();
+// });
+// $('button.av-marbles-wall').on('click', function(){
+//     avVideos.marblesWall.play();
+//     $(this).hide();
+// });
+// $('button.av-marbles-jar').on('click', function(){
+//     avVideos.marblesJar.play();
+//     $(this).hide();
+// });
+// $('button.av-map').on('click', function(){
+//     avVideos.map.play();
+//     $(this).hide();
+// });
+// $('button.av-wood').on('click', function(){
+//     avVideos.wood.play();
+//     $(this).hide();
+// });
+//
+// avVideos.portrait.on('ended', function() {
+//     this.dispose();
+// });
+// avVideos.scissors.on('ended', function() {
+//     this.dispose();
+// });
+// avVideos.coaster.on('ended', function() {
+//     this.dispose();
+// });
+// avVideos.marblesWall.on('ended', function() {
+//     this.dispose();
+// });
+// avVideos.marblesJar.on('ended', function() {
+//     this.dispose();
+// });
+// avVideos.map.on('ended', function() {
+//     this.dispose();
+// });
+// avVideos.wood.on('ended', function() {
+//     this.dispose();
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Tenement Windows
+
+// var windowVideos = {
+//     ssm: videojs('windows-ssm'),
+//     mlj: videojs('windows-mlj'),
+//     sot: videojs('windows-sot'),
+//     av: videojs('windows-av'),
+//     gg: videojs('windows-gg'),
+//     cv: videojs('windows-chari-vari')
+// };
+
 // windowVideos.ssm.on('ended', function() {
 //     this.dispose();
 //     windowVideos.mlj.play();
@@ -116,9 +199,21 @@ var avVideos = {
 
 
 
+
+
 // Concierge Room
+
+// var conciergeVideos = {
+//     phone: videojs('concierge-phone'),
+//     av: videojs('concierge-av'),
+//     gg: videojs('concierge-gg'),
+//     mlj: videojs('concierge-mlj'),
+//     sot: videojs('concierge-sot'),
+//     ssm: videojs('concierge-ssm')
+// };
+
 // var conciergeVideoCount = 0;
-//
+
 // function trackConcierge() {
 //     if (conciergeVideoCount < 4) return;
 //
@@ -192,7 +287,17 @@ var avVideos = {
 
 
 
+
+
 // SSM
+// var ssmVideos = {
+//     globe: videojs('ssm-globe'),
+//     books: videojs('ssm-books'),
+//     gramaphone: videojs('ssm-gramaphone'),
+//     box: videojs('ssm-box'),
+//     cup: videojs('ssm-cup'),
+//     mannequin: videojs('ssm-mannequin')
+// };
 // $('button.ssm-globe').on('click', function(){
 //     ssmVideos.globe.play();
 //     $(this).hide();
@@ -241,6 +346,17 @@ var avVideos = {
 
 
 // GG
+// var ggVideos = {
+//     dowel: videojs('gg-dowel'),
+//     bowl: videojs('gg-bowl'),
+//     goblet: videojs('gg-goblet'),
+//     sand: videojs('gg-sand'),
+//     constellationLow: videojs('gg-constellation-low'),
+//     symbol: videojs('gg-symbol'),
+//     moon: videojs('gg-moon'),
+//     constellationHigh: videojs('gg-constellation-high'),
+//     marble: videojs('gg-marble')
+// };
 // $('button.gg-dowel').on('click', function(){
 //     ggVideos.dowel.play();
 //     $(this).hide();
@@ -310,6 +426,15 @@ var avVideos = {
 
 
 // SOT
+// var sotVideos = {
+//     footlight: videojs('sot-footlight'),
+//     lobster: videojs('sot-lobster'),
+//     cherub: videojs('sot-cherub'),
+//     bottle: videojs('sot-bottle'),
+//     ballerina: videojs('sot-ballerina'),
+//     fish: videojs('sot-fish'),
+//     rose: videojs('sot-rose')
+// };
 // $('button.sot-footlight').on('click', function(){
 //     sotVideos.footlight.play();
 //     $(this).hide();
@@ -365,6 +490,14 @@ var avVideos = {
 
 
 // MLJ
+// var mljVideos = {
+//     turtle: videojs('mlj-turtle'),
+//     feather: videojs('mlj-feather'),
+//     skull: videojs('mlj-skull'),
+//     binoculars: videojs('mlj-binoculars'),
+//     egg: videojs('mlj-egg'),
+//     shell: videojs('mlj-shell')
+// };
 // $('button.mlj-turtle').on('click', function(){
 //     mljVideos.turtle.play();
 //     $(this).hide();
@@ -408,67 +541,3 @@ var avVideos = {
 // mljVideos.egg.on('ended', function() {
 //     this.dispose();
 // });
-
-
-
-// AV
-
-// portrait
-// scissors
-// coaster
-// marblesWall
-// marblesJar
-// map
-// wood
-
-
-$('button.av-portrait').on('click', function(){
-    avVideos.portrait.play();
-    $(this).hide();
-});
-$('button.av-scissors').on('click', function(){
-    avVideos.scissors.play();
-    $(this).hide();
-});
-$('button.av-coaster').on('click', function(){
-    avVideos.coaster.play();
-    $(this).hide();
-});
-$('button.av-marbles-wall').on('click', function(){
-    avVideos.marblesWall.play();
-    $(this).hide();
-});
-$('button.av-marbles-jar').on('click', function(){
-    avVideos.marblesJar.play();
-    $(this).hide();
-});
-$('button.av-map').on('click', function(){
-    avVideos.map.play();
-    $(this).hide();
-});
-$('button.av-wood').on('click', function(){
-    avVideos.wood.play();
-    $(this).hide();
-});
-
-avVideos.portrait.on('ended', function() {
-    this.dispose();
-});
-avVideos.scissors.on('ended', function() {
-    this.dispose();
-});
-avVideos.coaster.on('ended', function() {
-    this.dispose();
-});
-avVideos.marblesWall.on('ended', function() {
-    this.dispose();
-});
-avVideos.marblesJar.on('ended', function() {
-    this.dispose();
-});
-avVideos.map.on('ended', function() {
-    this.dispose();
-});
-avVideos.wood.on('ended', function() {
-    this.dispose();
-});
