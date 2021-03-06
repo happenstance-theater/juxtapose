@@ -192,8 +192,26 @@
             </div>
         </div> -->
 
-        <!-- <div id="ssm-page" class="step ssm" data-x="0" data-y="3600" data-z="1">
-            <div class="vid">
+
+
+
+        <div id="ssm-page" class="step ssm" data-x="0" data-y="3600" data-z="1">
+            <div class="vid" id="videos-render-ssm">
+                <!-- Videos render here -->
+            </div>
+
+            <div class="ssm-background">
+                <img src="img/room-ssm.jpg" />
+
+                <button class="ssm-globe"></button>
+                <button class="ssm-books"></button>
+                <button class="ssm-gramaphone"></button>
+                <button class="ssm-box"></button>
+                <button class="ssm-cup"></button>
+                <button class="ssm-mannequin"></button>
+            </div>
+
+            <script id="videos-html-ssm" type="text/template">
                 <video
                     id="ssm-globe"
                     class="video-js"
@@ -253,24 +271,33 @@
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/ssm_mannequin/playlist.m3u8" type="application/x-mpegURL">
                 </video>
+            </script>
+        </div>
+
+
+
+
+
+        <div id="gg-page" class="step gg" data-x="0" data-y="4800" data-z="1">
+            <div class="vid" id="videos-render-gg">
+                <!-- Videos render here -->
             </div>
 
-            <div class="ssm-background">
-                <img src="img/room-ssm.jpg" />
+            <div class="gg-background">
+                <img src="img/room-gg.jpg" />
 
-                <button class="ssm-globe"></button>
-                <button class="ssm-books"></button>
-                <button class="ssm-gramaphone"></button>
-                <button class="ssm-box"></button>
-                <button class="ssm-cup"></button>
-                <button class="ssm-mannequin"></button>
+                <button class="gg-dowel"></button>
+                <button class="gg-bowl"></button>
+                <button class="gg-goblet"></button>
+                <button class="gg-sand"></button>
+                <button class="gg-constellation-low"></button>
+                <button class="gg-constellation-high"></button>
+                <button class="gg-marble"></button>
+                <button class="gg-symbol"></button>
+                <button class="gg-moon"></button>
             </div>
-        </div> -->
 
-
-        <!-- <div id="gg-page" class="step gg" data-x="0" data-y="4800" data-z="1">
-            <div class="vid">
-
+            <script id="videos-html-gg" type="text/template">
                 <video
                     id="gg-dowel"
                     class="video-js"
@@ -360,25 +387,30 @@
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/gg_cups/playlist.m3u8" type="application/x-mpegURL">
                 </video>
-            </div>
-
-            <div class="gg-background">
-                <img src="img/room-gg.jpg" />
-
-                <button class="gg-dowel"></button>
-                <button class="gg-bowl"></button>
-                <button class="gg-goblet"></button>
-                <button class="gg-sand"></button>
-                <button class="gg-constellation-low"></button>
-                <button class="gg-constellation-high"></button>
-                <button class="gg-marble"></button>
-                <button class="gg-symbol"></button>
-                <button class="gg-moon"></button>
-            </div>
+            </script>
         </div>
 
+
+
+
         <div id="sot-page" class="step sot" data-x="0" data-y="6000" data-z="1">
-            <div class="vid">
+            <div class="vid" id="videos-render-sot">
+                <!-- Videos render here -->
+            </div>
+
+            <div class="sot-background">
+                <img src="img/room-sot.jpg" />
+
+                <button class="sot-footlight"></button>
+                <button class="sot-lobster"></button>
+                <button class="sot-cherub"></button>
+                <button class="sot-bottle"></button>
+                <button class="sot-ballerina"></button>
+                <button class="sot-fish"></button>
+                <button class="sot-rose"></button>
+            </div>
+
+            <script id="videos-html-sot" type="text/template">
                 <video
                     id="sot-footlight"
                     class="video-js"
@@ -448,23 +480,28 @@
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/sot_star_plucking/playlist.m3u8" type="application/x-mpegURL">
                 </video>
-            </div>
-
-            <div class="sot-background">
-                <img src="img/room-sot.jpg" />
-
-                <button class="sot-footlight"></button>
-                <button class="sot-lobster"></button>
-                <button class="sot-cherub"></button>
-                <button class="sot-bottle"></button>
-                <button class="sot-ballerina"></button>
-                <button class="sot-fish"></button>
-                <button class="sot-rose"></button>
-            </div>
+            </script>
         </div>
 
-        <div id="mlj-page" class="step mlj" data-x="0" data-y="6000" data-z="1">
-            <div class="vid">
+
+
+        <div id="mlj-page" class="step mlj" data-x="0" data-y="7200" data-z="1">
+            <div class="vid" id="videos-render-mlj">
+                <!-- Videos render here -->
+            </div>
+
+            <div class="mlj-background">
+                <img src="img/room-mlj.jpg" />
+
+                <button class="mlj-turtle"></button>
+                <button class="mlj-egg"></button>
+                <button class="mlj-feather"></button>
+                <button class="mlj-skull"></button>
+                <button class="mlj-shell"></button>
+                <button class="mlj-binoculars"></button>
+            </div>
+
+            <script id="videos-html-mlj" type="text/template">
                 <video
                     id="mlj-turtle"
                     class="video-js"
@@ -524,23 +561,12 @@
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/mlj_binoculars/playlist.m3u8" type="application/x-mpegURL">
                 </video>
-            </div>
-
-            <div class="mlj-background">
-                <img src="img/room-mlj.jpg" />
-
-                <button class="mlj-turtle"></button>
-                <button class="mlj-egg"></button>
-                <button class="mlj-feather"></button>
-                <button class="mlj-skull"></button>
-                <button class="mlj-shell"></button>
-                <button class="mlj-binoculars"></button>
-            </div>
-        </div> -->
+            </script>
+        </div>
 
 
 
-        <div id="av-page" class="step av" data-x="0" data-y="7200" data-z="1">
+        <div id="av-page" class="step av" data-x="0" data-y="8400" data-z="1">
             <div class="vid" id="videos-render-av">
                 <!-- Videos render here -->
             </div>

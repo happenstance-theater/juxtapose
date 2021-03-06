@@ -14,7 +14,7 @@ prez.init();
 
 
 
-function Room(name, matrix) {
+function CastRoom(name, matrix) {
     this.name = name;
     this.matrix = matrix;
 
@@ -44,7 +44,8 @@ function Room(name, matrix) {
     };
 }
 
-var av = new Room('av', {
+
+var av = new CastRoom('av', {
     portrait: 'av-portrait',
     scissors: 'av-scissors',
     coaster: 'av-coaster',
@@ -53,79 +54,55 @@ var av = new Room('av', {
     map: 'av-map',
     wood: 'av-wood'
 });
-
 // av.setup();
 
 
+var ssm = new CastRoom('ssm', {
+    globe: 'ssm-globe',
+    books: 'ssm-books',
+    gramaphone: 'ssm-gramaphone',
+    box: 'ssm-box',
+    cup: 'ssm-cup',
+    mannequin: 'ssm-mannequin'
+});
+// ssm.setup();
 
 
-// AV
-// var avVideos = {
-//     portrait: videojs('av-portrait'),
-//     scissors: videojs('av-scissors'),
-//     coaster: videojs('av-coaster'),
-//     marblesWall: videojs('av-marbles-wall'),
-//     marblesJar: videojs('av-marbles-jar'),
-//     map: videojs('av-map'),
-//     wood: videojs('av-wood')
-// };
-
-// $('button.av-portrait').on('click', function(){
-//     avVideos.portrait.play();
-//     $(this).hide();
-// });
-// $('button.av-scissors').on('click', function(){
-//     avVideos.scissors.play();
-//     $(this).hide();
-// });
-// $('button.av-coaster').on('click', function(){
-//     avVideos.coaster.play();
-//     $(this).hide();
-// });
-// $('button.av-marbles-wall').on('click', function(){
-//     avVideos.marblesWall.play();
-//     $(this).hide();
-// });
-// $('button.av-marbles-jar').on('click', function(){
-//     avVideos.marblesJar.play();
-//     $(this).hide();
-// });
-// $('button.av-map').on('click', function(){
-//     avVideos.map.play();
-//     $(this).hide();
-// });
-// $('button.av-wood').on('click', function(){
-//     avVideos.wood.play();
-//     $(this).hide();
-// });
-//
-// avVideos.portrait.on('ended', function() {
-//     this.dispose();
-// });
-// avVideos.scissors.on('ended', function() {
-//     this.dispose();
-// });
-// avVideos.coaster.on('ended', function() {
-//     this.dispose();
-// });
-// avVideos.marblesWall.on('ended', function() {
-//     this.dispose();
-// });
-// avVideos.marblesJar.on('ended', function() {
-//     this.dispose();
-// });
-// avVideos.map.on('ended', function() {
-//     this.dispose();
-// });
-// avVideos.wood.on('ended', function() {
-//     this.dispose();
-// });
+var gg = new CastRoom('gg', {
+    dowel: 'gg-dowel',
+    bowl: 'gg-bowl',
+    goblet: 'gg-goblet',
+    sand: 'gg-sand',
+    constellationLow: 'gg-constellation-low',
+    symbol: 'gg-symbol',
+    moon: 'gg-moon',
+    constellationHigh: 'gg-constellation-high',
+    marble: 'gg-marble'
+});
+// gg.setup();
 
 
+var sot = new CastRoom('sot', {
+    footlight: 'sot-footlight',
+    lobster: 'sot-lobster',
+    cherub: 'sot-cherub',
+    bottle: 'sot-bottle',
+    ballerina: 'sot-ballerina',
+    fish: 'sot-fish',
+    rose: 'sot-rose'
+});
+// sot.setup();
 
 
-
-
+var mlj = new CastRoom('mlj', {
+    turtle: 'mlj-turtle',
+    feather: 'mlj-feather',
+    skull: 'mlj-skull',
+    binoculars: 'mlj-binoculars',
+    egg: 'mlj-egg',
+    shell: 'mlj-shell'
+});
+// mlj.setup();
 
 
 
@@ -267,264 +244,4 @@ var av = new Room('av', {
 //     });
 //
 //     $('button.key-ssm').show();
-// });
-
-
-
-
-
-
-
-
-// SSM
-// var ssmVideos = {
-//     globe: videojs('ssm-globe'),
-//     books: videojs('ssm-books'),
-//     gramaphone: videojs('ssm-gramaphone'),
-//     box: videojs('ssm-box'),
-//     cup: videojs('ssm-cup'),
-//     mannequin: videojs('ssm-mannequin')
-// };
-// $('button.ssm-globe').on('click', function(){
-//     ssmVideos.globe.play();
-//     $(this).hide();
-// });
-// $('button.ssm-books').on('click', function(){
-//     ssmVideos.books.play();
-//     $(this).hide();
-// });
-// $('button.ssm-gramaphone').on('click', function(){
-//     ssmVideos.gramaphone.play();
-//     $(this).hide();
-// });
-// $('button.ssm-box').on('click', function(){
-//     ssmVideos.box.play();
-//     $(this).hide();
-// });
-// $('button.ssm-cup').on('click', function(){
-//     ssmVideos.cup.play();
-//     $(this).hide();
-// });
-// $('button.ssm-mannequin').on('click', function(){
-//     ssmVideos.mannequin.play();
-//     $(this).hide();
-// });
-//
-//
-// ssmVideos.globe.on('ended', function() {
-//     this.dispose();
-// });
-// ssmVideos.books.on('ended', function() {
-//     this.dispose();
-// });
-// ssmVideos.gramaphone.on('ended', function() {
-//     this.dispose();
-// });
-// ssmVideos.box.on('ended', function() {
-//     this.dispose();
-// });
-// ssmVideos.cup.on('ended', function() {
-//     this.dispose();
-// });
-// ssmVideos.mannequin.on('ended', function() {
-//     this.dispose();
-// });
-
-
-
-// GG
-// var ggVideos = {
-//     dowel: videojs('gg-dowel'),
-//     bowl: videojs('gg-bowl'),
-//     goblet: videojs('gg-goblet'),
-//     sand: videojs('gg-sand'),
-//     constellationLow: videojs('gg-constellation-low'),
-//     symbol: videojs('gg-symbol'),
-//     moon: videojs('gg-moon'),
-//     constellationHigh: videojs('gg-constellation-high'),
-//     marble: videojs('gg-marble')
-// };
-// $('button.gg-dowel').on('click', function(){
-//     ggVideos.dowel.play();
-//     $(this).hide();
-// });
-// $('button.gg-bowl').on('click', function(){
-//     ggVideos.bowl.play();
-//     $(this).hide();
-// });
-// $('button.gg-goblet').on('click', function(){
-//     ggVideos.goblet.play();
-//     $(this).hide();
-// });
-// $('button.gg-sand').on('click', function(){
-//     ggVideos.sand.play();
-//     $(this).hide();
-// });
-// $('button.gg-moon').on('click', function(){
-//     ggVideos.moon.play();
-//     $(this).hide();
-// });
-// $('button.gg-symbol').on('click', function(){
-//     ggVideos.symbol.play();
-//     $(this).hide();
-// });
-// $('button.gg-marble').on('click', function(){
-//     ggVideos.marble.play();
-//     $(this).hide();
-// });
-// $('button.gg-constellation-high').on('click', function(){
-//     ggVideos.constellationHigh.play();
-//     $(this).hide();
-// });
-// $('button.gg-constellation-low').on('click', function(){
-//     ggVideos.constellationLow.play();
-//     $(this).hide();
-// });
-//
-// ggVideos.dowel.on('ended', function() {
-//     this.dispose();
-// });
-// ggVideos.bowl.on('ended', function() {
-//     this.dispose();
-// });
-// ggVideos.goblet.on('ended', function() {
-//     this.dispose();
-// });
-// ggVideos.dowel.on('ended', function() {
-//     this.dispose();
-// });
-// ggVideos.moon.on('ended', function() {
-//     this.dispose();
-// });
-// ggVideos.symbol.on('ended', function() {
-//     this.dispose();
-// });
-// ggVideos.marble.on('ended', function() {
-//     this.dispose();
-// });
-// ggVideos.constellationHigh.on('ended', function() {
-//     this.dispose();
-// });
-// ggVideos.constellationLow.on('ended', function() {
-//     this.dispose();
-// });
-
-
-
-
-// SOT
-// var sotVideos = {
-//     footlight: videojs('sot-footlight'),
-//     lobster: videojs('sot-lobster'),
-//     cherub: videojs('sot-cherub'),
-//     bottle: videojs('sot-bottle'),
-//     ballerina: videojs('sot-ballerina'),
-//     fish: videojs('sot-fish'),
-//     rose: videojs('sot-rose')
-// };
-// $('button.sot-footlight').on('click', function(){
-//     sotVideos.footlight.play();
-//     $(this).hide();
-// });
-// $('button.sot-lobster').on('click', function(){
-//     sotVideos.lobster.play();
-//     $(this).hide();
-// });
-// $('button.sot-cherub').on('click', function(){
-//     sotVideos.cherub.play();
-//     $(this).hide();
-// });
-// $('button.sot-bottle').on('click', function(){
-//     sotVideos.bottle.play();
-//     $(this).hide();
-// });
-// $('button.sot-ballerina').on('click', function(){
-//     sotVideos.ballerina.play();
-//     $(this).hide();
-// });
-// $('button.sot-fish').on('click', function(){
-//     sotVideos.fish.play();
-//     $(this).hide();
-// });
-// $('button.sot-rose').on('click', function(){
-//     sotVideos.rose.play();
-//     $(this).hide();
-// });
-//
-// sotVideos.footlight.on('ended', function() {
-//     this.dispose();
-// });
-// sotVideos.lobster.on('ended', function() {
-//     this.dispose();
-// });
-// sotVideos.cherub.on('ended', function() {
-//     this.dispose();
-// });
-// sotVideos.bottle.on('ended', function() {
-//     this.dispose();
-// });
-// sotVideos.ballerina.on('ended', function() {
-//     this.dispose();
-// });
-// sotVideos.fish.on('ended', function() {
-//     this.dispose();
-// });
-// sotVideos.rose.on('ended', function() {
-//     this.dispose();
-// });
-
-
-
-
-// MLJ
-// var mljVideos = {
-//     turtle: videojs('mlj-turtle'),
-//     feather: videojs('mlj-feather'),
-//     skull: videojs('mlj-skull'),
-//     binoculars: videojs('mlj-binoculars'),
-//     egg: videojs('mlj-egg'),
-//     shell: videojs('mlj-shell')
-// };
-// $('button.mlj-turtle').on('click', function(){
-//     mljVideos.turtle.play();
-//     $(this).hide();
-// });
-// $('button.mlj-shell').on('click', function(){
-//     mljVideos.shell.play();
-//     $(this).hide();
-// });
-// $('button.mlj-skull').on('click', function(){
-//     mljVideos.skull.play();
-//     $(this).hide();
-// });
-// $('button.mlj-binoculars').on('click', function(){
-//     mljVideos.binoculars.play();
-//     $(this).hide();
-// });
-// $('button.mlj-feather').on('click', function(){
-//     mljVideos.feather.play();
-//     $(this).hide();
-// });
-// $('button.mlj-egg').on('click', function(){
-//     mljVideos.egg.play();
-//     $(this).hide();
-// });
-//
-// mljVideos.turtle.on('ended', function() {
-//     this.dispose();
-// });
-// mljVideos.shell.on('ended', function() {
-//     this.dispose();
-// });
-// mljVideos.skull.on('ended', function() {
-//     this.dispose();
-// });
-// mljVideos.binoculars.on('ended', function() {
-//     this.dispose();
-// });
-// mljVideos.feather.on('ended', function() {
-//     this.dispose();
-// });
-// mljVideos.egg.on('ended', function() {
-//     this.dispose();
 // });
