@@ -436,6 +436,77 @@ img {
 
 
 
+.av .video-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.av .vjs-playing {
+    z-index: 99;
+}
+.av-background {
+    z-index: 9;
+    position: relative;
+}
+.av button {
+    border-radius: 5px;
+    animation: 3s linear 3s infinite running pulse;
+    border: 1px solid transparent;
+    background-color: rgba(255,255,255,0);
+    appearance: none;
+    position: absolute;
+    cursor: pointer;
+}
+.av button:hover {
+    border-color: #fff !important;
+    background-color: rgba(255,255,255,0.2);
+}
+.av button.av-portrait {
+    top: 11%;
+    left: 60%;
+    height: 11%;
+    width: 4%;
+}
+.av button.av-scissors {
+    top: 78%;
+    left: 41%;
+    height: 10%;
+    width: 14%;
+    transform: rotate(45deg);
+}
+.av button.av-coaster {
+    top: 7%;
+    left: 71%;
+    height: 21%;
+    width: 6%;
+}
+.av button.av-marbles-wall {
+    top: 18%;
+    left: 41%;
+    height: 11%;
+    width: 6%;
+}
+.av button.av-marbles-jar {
+    top: 51%;
+    left: 36%;
+    height: 17%;
+    width: 6%;
+}
+.av button.av-map {
+    top: 41%;
+    left: 51%;
+    height: 10%;
+    width: 8%;
+}
+.av button.av-wood {
+    top: 58%;
+    left: 48%;
+    height: 9%;
+    width: 7%;
+}
+
+
+
 /*
 
 img.parrot {
