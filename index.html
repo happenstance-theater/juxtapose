@@ -28,16 +28,24 @@
 
 
         <!-- Landing -->
-        <!-- <div id="landing-page" class="step" data-x="0" data-y=0 data-z="0">
+        <div id="landing-page" class="step" data-x="0" data-y=0 data-z="0">
             <h1>Happenstance</h1>
 
             <button id="button-play">Play</button>
         </div>
 
+
+
+
+
         <div id="windows-page" class="step windows" data-x="0" data-y="1200" data-z="1">
             <img src="img/windows-bg.jpg" />
 
-            <div class="vid">
+            <div class="vid" id="videos-render-windows">
+                <!-- Videos render here -->
+            </div>
+
+            <script id="videos-html-windows" type="text/template">
                 <video
                     id="windows-chari-vari"
                     class="video-js"
@@ -48,9 +56,7 @@
 
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/window_chari_vari/playlist.m3u8" type="application/x-mpegURL">
                 </video>
-            </div>
 
-            <div class="vid">
                 <video
                     id="windows-gg"
                     class="video-js"
@@ -61,9 +67,7 @@
 
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/window_gg/playlist.m3u8" type="application/x-mpegURL">
                 </video>
-            </div>
 
-            <div class="vid">
                 <video
                     id="windows-av"
                     class="video-js"
@@ -74,9 +78,7 @@
 
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/window_av/playlist.m3u8" type="application/x-mpegURL">
                 </video>
-            </div>
 
-            <div class="vid">
                 <video
                     id="windows-sot"
                     class="video-js"
@@ -87,9 +89,7 @@
 
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/window_sot/playlist.m3u8" type="application/x-mpegURL">
                 </video>
-            </div>
 
-            <div class="vid">
                 <video
                     id="windows-mlj"
                     class="video-js"
@@ -100,9 +100,7 @@
 
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/window_mlj/playlist.m3u8" type="application/x-mpegURL">
                 </video>
-            </div>
 
-            <div class="vid">
                 <video
                     id="windows-ssm"
                     class="video-js"
@@ -113,8 +111,8 @@
 
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/window_ssm/playlist.m3u8" type="application/x-mpegURL">
                 </video>
-            </div>
-        </div> -->
+            </script>
+        </div>
 
 
 
@@ -122,7 +120,21 @@
 
 
         <div id="concierge-page" class="step concierge" data-x="0" data-y="2400" data-z="1">
-            <div class="vid">
+            <div class="vid" id="videos-render-concierge">
+                <!-- Videos render here -->
+            </div>
+
+            <div class="concierge-background">
+                <img src="img/concierge.jpg" id="concierge-bg-img" />
+
+                <button class="crg-phone"></button>
+                <button class="crg-package"></button>
+                <button class="crg-bell"></button>
+                <button class="crg-umbrella"></button>
+                <button class="crg-clock"></button>
+            </div>
+
+            <script id="videos-html-concierge" type="text/template">
                 <video
                     id="concierge-phone"
                     class="video-js"
@@ -182,30 +194,22 @@
                     data-setup="{}">
                     <source src="https://happenstance-theater.s3.amazonaws.com/juxtapose/desk_ssm/playlist.m3u8" type="application/x-mpegURL">
                 </video>
-            </div>
-
-            <div class="concierge-background">
-                <img src="img/concierge.jpg" id="concierge-bg-img" />
-
-                <button class="crg-phone"></button>
-                <button class="crg-package"></button>
-                <button class="crg-bell"></button>
-                <button class="crg-umbrella"></button>
-                <button class="crg-clock"></button>
-
-                <button class="key key-ssm"></button>
-            </div>
+            </script>
         </div>
 
 
 
 
         <div id="keys-page" class="step keys" data-x="145" data-y="2300" data-z="10" data-scale="0.2">
-            <button class="keys-ssm" data-room="ssm"></button>
-            <button class="keys-gg" data-room="gg"></button>
-            <button class="keys-sot" data-room="sot"></button>
-            <button class="keys-mlj" data-room="mlj"></button>
-            <button class="keys-av" data-room="av"></button>
+            <img id="key-bg" src="img/room-keys.jpg" />
+
+            <script id="buttons-html-keys" type="text/template">
+                <button class="keys-ssm" data-room="ssm"></button>
+                <button class="keys-gg" data-room="gg"></button>
+                <button class="keys-sot" data-room="sot"></button>
+                <button class="keys-mlj" data-room="mlj"></button>
+                <button class="keys-av" data-room="av"></button>
+            </script>
         </div>
 
 

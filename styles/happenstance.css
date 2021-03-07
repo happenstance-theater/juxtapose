@@ -64,12 +64,18 @@ img {
 }
 
 
-#keys-page {
-    background: url(../img/room-keys.jpg) no-repeat center center;
-    background-size: contain;
+
+
+
+
+.windows .video-js {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-
-
+.windows .vjs-playing {
+    z-index: 99;
+}
 
 
 
@@ -140,21 +146,17 @@ img {
     height: 6%;
     width: 6%;
 }
-.concierge button.key {
+
+
+
+
+
+#keys-page img {
+    max-height: 100%;
     display: none;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
-.concierge button.key-ssm {
-    left: 57%;
-    top: 34%;
-    height: 8%;
-    width: 3%;
-}
-
-
-
-
-
-
 .keys button {
     border-radius: 5px;
     animation: 3s linear 3s infinite running pulse;
