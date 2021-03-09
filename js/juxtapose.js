@@ -60,7 +60,6 @@ function WindowRoom() {
 
 
 
-
 // Concierge Rooom
 function ConciergeRoom() {
     this.conciergeVideoCount = 0;
@@ -293,30 +292,13 @@ function KeyRoom() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Start the Presentation
 prez.init();
-
 
 // Instantiate (preserve order)
 var keyRoom = new KeyRoom();
 var conciergeRoom = new ConciergeRoom();
 var windowRoom = new WindowRoom();
-
 
 // Play button listener
 $('button#button-play').on('click', function(){
