@@ -301,7 +301,7 @@ var conciergeRoom = new ConciergeRoom();
 var windowRoom = new WindowRoom();
 
 // Play button listener
-$('button#button-play').on('click', function(){
+$('#button-play').on('click', function(){
     windowRoom.setup(); // loads window videos
     prez.goto('intro', 5000); // moves to window page
     _.delay(function(){
