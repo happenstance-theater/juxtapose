@@ -303,6 +303,9 @@ var windowRoom = new WindowRoom();
 // Play button listener
 $('button#button-play').on('click', function(){
     windowRoom.setup(); // loads window videos
-    prez.next(); // moves to window page
+    prez.goto('intro', 5000); // moves to window page
+    _.delay(function(){
+        prez.goto('windows-page', 20000);
+    }, 10000);
     return false;
 });

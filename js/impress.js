@@ -311,8 +311,7 @@
                 transform: "translate(-50%,-50%)" +
                            translate( step.translate ) +
                            rotate( step.rotate ) +
-                           scale( step.scale ),
-                transformStyle: "preserve-3d"
+                           scale( step.scale )
             } );
         };
 
