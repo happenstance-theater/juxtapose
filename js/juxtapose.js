@@ -32,6 +32,10 @@ function WindowRoom() {
         self.vids.mlj.on('ended', function() {
             this.dispose();
             self.vids.sot.play();
+
+            // Good timing for some staging items
+            $('body').css('background', '#000');
+            $('#box-background').remove();
         });
         self.vids.sot.on('ended', function() {
             this.dispose();
@@ -48,7 +52,7 @@ function WindowRoom() {
         self.vids.cv.on('ended', function() {
             this.dispose();
             conciergeRoom.setup();
-            prez.next();
+            prez.goto('concierge-page', 3000);
         });
 
         // Play the first to start
@@ -309,7 +313,9 @@ $('#button-play').on('click', function(){
             $('.landing-poem').fadeOut(function(){
                 _.delay(function(){
                     $('.landing-here').fadeOut(function(){
-                        prez.goto('windows-page', 20000);
+                        _.delay(function(){
+                            prez.goto('windows-page', 20000);
+                        }, 2000);
                     });
                 }, 5000);
             });

@@ -5,6 +5,35 @@
 }
 
 
+@keyframes shake-bottom {
+  0%,
+  20% {
+            transform: rotate(0deg);
+            transform-origin: 50% 100%;
+  }
+  2% {
+            transform: rotate(2deg);
+  }
+  4%,
+  8%,
+  12% {
+            transform: rotate(-4deg);
+  }
+  6%,
+  10%,
+  14% {
+            transform: rotate(4deg);
+  }
+  16% {
+            transform: rotate(-2deg);
+  }
+  18% {
+            transform: rotate(2deg);
+  }
+}
+
+
+
 *,
 *::before,
 *::after {
@@ -72,6 +101,7 @@ img {
 #landing-page #button-play img {
     width: 30px;
     vertical-align: bottom;
+    animation: shake-bottom 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s infinite both;
 }
 
 p.poem {
@@ -630,7 +660,10 @@ img.pipe {
     /* width: 600px; */
 }
 img.planetary {
-    width: 160px;
+    width: 200px;
+    position: absolute;
+    top: -280px;
+    right: -90px;
 }
 img.key {
     width: 160px;
@@ -643,8 +676,4 @@ img.headless-girl {
 img.lobster {
     transform: rotate(53deg);
     width: 800px;
-}
-
-img.box-bg {
-    margin-top: 30px;
 }
