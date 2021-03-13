@@ -302,10 +302,19 @@ var windowRoom = new WindowRoom();
 
 // Play button listener
 $('#button-play').on('click', function(){
-    windowRoom.setup(); // loads window videos
-    prez.goto('intro', 5000); // moves to window page
-    _.delay(function(){
-        prez.goto('windows-page', 20000);
-    }, 10000);
+    $(this).fadeOut();
+    $('.landing-paper').fadeOut(function(){
+        _.delay(function(){
+            windowRoom.setup();
+            $('.landing-poem').fadeOut(function(){
+                _.delay(function(){
+                    $('.landing-here').fadeOut(function(){
+                        prez.goto('windows-page', 20000);
+                    });
+                }, 5000);
+            });
+        }, 10000);
+    });
+
     return false;
 });

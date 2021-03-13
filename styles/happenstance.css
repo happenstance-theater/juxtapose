@@ -41,12 +41,25 @@ img {
 
 
 
-
-
-
 #landing-page {
-    text-align: center;
 
+}
+#landing-page .landing-intro {
+    position: relative;
+    padding: 10%;
+}
+#landing-page img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+}
+
+#landing-page #button-play{
+    position: absolute;
+    bottom: 12%;
+    right: 20%;
 }
 
 p.poem {
@@ -619,7 +632,7 @@ img.lobster {
     transform: rotate(53deg);
     width: 800px;
 }
-/*
+
 img.box-bg {
-    width: 1000px;
-} */
+    margin-top: 30px;
+}
