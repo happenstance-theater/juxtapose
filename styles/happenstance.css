@@ -48,7 +48,7 @@ img {
     position: relative;
     padding: 10%;
 }
-#landing-page img {
+#landing-page .landing-img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -56,10 +56,22 @@ img {
     max-width: 90%;
 }
 
-#landing-page #button-play{
+#landing-page #button-play {
+    display: block;
     position: absolute;
     bottom: 12%;
     right: 20%;
+    font-size: 25px;
+    font-family: cursive;
+    cursor: pointer;
+    color: #942a32;
+}
+#landing-page #button-play:hover {
+    opacity: 0.8;
+}
+#landing-page #button-play img {
+    width: 30px;
+    vertical-align: bottom;
 }
 
 p.poem {
