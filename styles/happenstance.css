@@ -683,11 +683,10 @@ img.key {
     width: 180px;
 }
 img.headless-girl {
-    width: 450px;
+    width: 550px;
     transform: rotate(10deg);
 }
 
 img.lobster {
-    transform: rotate(53deg);
-    width: 800px;
+    width: 400px;
 }
