@@ -139,6 +139,17 @@ p.poem a {
 .windows .vjs-playing {
     z-index: 99;
 }
+.windows img {
+    display: block;
+    position: relative;
+}
+.windows img.building {
+    width: 1106px;
+    max-width: none;
+    position: absolute;
+    top: -108px;
+    left: -8px;
+}
 
 
 
@@ -635,7 +646,7 @@ p.poem a {
 
 
 img.parrot {
-    width: 250px;
+    width: 240px;
 }
 img.ball {
     width: 100px;
@@ -644,29 +655,32 @@ img.butterfly {
     width: 300px;
 }
 img.cornell {
-    width: 900px;
+    width: 830px;
 }
 img.astrology {
     opacity: 0.5;
     transform: rotate(50deg);
 }
-img.building {
-    width: 1000px;
-}
+
 img.flare {
-    width: 650px;
+    width: 750px;
 }
 img.pipe {
-    /* width: 600px; */
+    width: 580px;
+}
+img.nautilus {
+    width: 160px;
+    transform: rotate(-80deg);
 }
 img.planetary {
     width: 200px;
     position: absolute;
     top: -280px;
     right: -90px;
+    z-index: 99;
 }
 img.key {
-    width: 160px;
+    width: 180px;
 }
 img.headless-girl {
     width: 450px;
