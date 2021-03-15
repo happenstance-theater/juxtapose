@@ -309,17 +309,19 @@ $('#button-play').on('click', function(){
     $(this).fadeOut();
     $('.landing-paper').fadeOut(function(){
         _.delay(function(){
-            windowRoom.setup();
             $('.landing-poem').fadeOut(function(){
                 _.delay(function(){
-                    $('.landing-here').fadeOut(function(){
-                        _.delay(function(){
-                            prez.goto('windows-page', 20000);
-                        }, 2000);
-                    });
-                }, 5000);
+                    windowRoom.setup();
+                    _.delay(function(){
+                        $('.landing-here').fadeOut(function(){
+                            _.delay(function(){
+                                prez.goto('windows-page', 25000); // 25sec
+                            }, 15000); // 15sec
+                        });
+                    }, 5000); // 5sec
+                }, 10000); // 10sec
             });
-        }, 10000);
+        }, 40000); // 40sec
     });
 
     return false;
