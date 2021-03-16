@@ -210,7 +210,7 @@ img {
 }
 .concierge button:hover {
     transform: scale(1) !important;
-    background: radial-gradient(black, transparent, transparent);
+    background: radial-gradient(white, white, transparent, transparent);
 }
 .concierge button.crg-phone {
     left: 76.5%;
