@@ -32,10 +32,6 @@ function WindowRoom() {
         self.vids.mlj.on('ended', function() {
             this.dispose();
             self.vids.sot.play();
-
-            // Good timing for some staging items
-            $('body').css('background', '#000');
-            $('#box-background').remove();
         });
         self.vids.sot.on('ended', function() {
             this.dispose();
@@ -51,8 +47,15 @@ function WindowRoom() {
         });
         self.vids.cv.on('ended', function() {
             this.dispose();
+
             conciergeRoom.setup();
-            prez.goto('concierge-page', 3000);
+            $('body').css('background', '#000');
+            $('#box-background').remove();
+
+            prez.goto('concierge-door', 2000);
+            _.delay(function(){
+                prez.goto('concierge-page', 4000);
+            }, 2000);
         });
 
         // Play the first to start

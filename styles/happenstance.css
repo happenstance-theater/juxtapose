@@ -88,8 +88,8 @@ img {
 #landing-page #button-play {
     display: block;
     position: absolute;
-    bottom: 12%;
-    right: 20%;
+    bottom: 14%;
+    right: 19%;
     font-size: 25px;
     font-family: cursive;
     cursor: pointer;
@@ -99,7 +99,7 @@ img {
     opacity: 0.8;
 }
 #landing-page #button-play img {
-    width: 30px;
+    width: 50px;
     vertical-align: bottom;
     animation: shake-bottom 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s infinite both;
 }
