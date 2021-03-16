@@ -136,7 +136,7 @@ img {
 }
 
 #landing-page #button-play {
-    display: block;
+    display: none;
     position: absolute;
     bottom: 14%;
     right: 19%;

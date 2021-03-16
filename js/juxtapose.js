@@ -9,19 +9,21 @@ var prez = impress();
 function WindowRoom() {
     this.videos = $('script#videos-html-windows').html();
 
-    this.windowTrack = new Audio('audio/windows.mp3');
-    this.windowTrack.volume = 0.1;
-    // Load step?
+    this.loadAudio = function(cb) {
+        this.soundtrack = new Audio('audio/windows.mp3');
+        this.soundtrack.volume = 0.1;
+        this.soundtrack.addEventListener("canplaythrough", cb);
+    };
 
     this.fadeAudio = function(level, duration) {
-        $(this.windowTrack).animate({volume: level}, duration);
+        $(this.soundtrack).animate({volume: level}, duration);
     };
 
     this.setup = function() {
         var self = this;
 
         // Start Playing the background audio
-        self.windowTrack.play();
+        self.soundtrack.play();
 
         // Template HTML
         $('#videos-render-windows').html(self.videos);
@@ -56,7 +58,7 @@ function WindowRoom() {
             this.dispose();
             self.fadeAudio(0, 2000);
             _.delay(function() {
-                self.windowTrack.pause();
+                self.soundtrack.pause();
                 self.vids.cv.play();
             }, 2000);
         });
@@ -321,6 +323,9 @@ prez.init();
 var keyRoom = new KeyRoom();
 var conciergeRoom = new ConciergeRoom();
 var windowRoom = new WindowRoom();
+windowRoom.loadAudio(function(){
+    $('#button-play').fadeIn();
+});
 
 
 // Play button listener
