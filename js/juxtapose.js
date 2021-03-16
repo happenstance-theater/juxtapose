@@ -9,8 +9,19 @@ var prez = impress();
 function WindowRoom() {
     this.videos = $('script#videos-html-windows').html();
 
+    this.windowTrack = new Audio('audio/windows.mp3');
+    this.windowTrack.volume = 0.1;
+    // Load step?
+
+    this.fadeAudio = function(level, duration) {
+        $(this.windowTrack).animate({volume: level}, duration);
+    };
+
     this.setup = function() {
         var self = this;
+
+        // Start Playing the background audio
+        self.windowTrack.play();
 
         // Template HTML
         $('#videos-render-windows').html(self.videos);
@@ -43,7 +54,11 @@ function WindowRoom() {
         });
         self.vids.gg.on('ended', function() {
             this.dispose();
-            self.vids.cv.play();
+            self.fadeAudio(0, 2000);
+            _.delay(function() {
+                self.windowTrack.pause();
+                self.vids.cv.play();
+            }, 2000);
         });
         self.vids.cv.on('ended', function() {
             this.dispose();
@@ -55,7 +70,7 @@ function WindowRoom() {
             prez.goto('concierge-door', 2000);
             _.delay(function(){
                 prez.goto('concierge-page', 4000);
-            }, 2000);
+            }, 2500);
         });
 
         // Play the first to start
@@ -307,18 +322,22 @@ var keyRoom = new KeyRoom();
 var conciergeRoom = new ConciergeRoom();
 var windowRoom = new WindowRoom();
 
+
 // Play button listener
 $('#button-play').on('click', function(){
     $(this).fadeOut();
+
     $('.landing-paper').fadeOut(function(){
         _.delay(function(){
             $('.landing-poem').fadeOut(function(){
                 _.delay(function(){
                     windowRoom.setup();
+
                     _.delay(function(){
                         $('.landing-here').fadeOut(function(){
                             _.delay(function(){
                                 prez.goto('windows-page', 25000); // 25sec
+                                windowRoom.fadeAudio(0.5, 25000);
                             }, 15000); // 15sec
                         });
                     }, 5000); // 5sec
