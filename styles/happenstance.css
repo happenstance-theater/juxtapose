@@ -194,9 +194,11 @@ img {
     position: relative;
 }
 
-.concierge button {
+
+
+button.room-button {
     border-radius: 10px;
-    animation: heartbeat 1.5s ease-in infinite both;
+    /* animation: heartbeat 1.5s ease-in infinite both; */
     border: none;
     background: none;
     appearance: none;
@@ -207,11 +209,16 @@ img {
     left: 10%;
     cursor: pointer;
     transform-origin: center center;
+    opacity: 0.5;
+    transition: all 0.1s ease-in-out;
 }
-.concierge button:hover {
-    transform: scale(1) !important;
-    background: radial-gradient(white, white, transparent, transparent);
+button.room-button:hover {
+    /* transform: scale(1.1) !important; */
+    opacity: 1;
 }
+
+
+
 .concierge button.crg-phone {
     left: 76.5%;
     top: 51%;
@@ -323,54 +330,35 @@ img {
     z-index: 9;
     position: relative;
 }
-.ssm button {
-    border-radius: 5px;
-    animation: 3s linear 3s infinite running pulse;
-    border: 1px solid transparent;
-    background-color: rgba(255,255,255,0);
-    appearance: none;
-    position: absolute;
-    cursor: pointer;
-}
-.ssm button:hover {
-    border-color: #fff !important;
-    background-color: rgba(255,255,255,0.2);
-}
 .ssm button.ssm-globe {
-    top: 34%;
-    left: 25%;
-    height: 13%;
-    width: 8%;
+    top: 34.2%;
+    left: 25.3%;
+    width: 7%;
 }
 .ssm button.ssm-gramaphone {
-    top: 39%;
-    left: 63%;
-    height: 28%;
-    width: 16%;
+    top: 40%;
+    left: 64.4%;
+    width: 14%;
 }
 .ssm button.ssm-books {
-    top: 30%;
-    left: 46%;
-    height: 12%;
-    width: 11%;
+    top: 28.7%;
+    left: 46.6%;
+    width: 10.2%;
 }
 .ssm button.ssm-box {
-    top: 14%;
-    left: 43%;
-    height: 14%;
-    width: 11%;
+    top: 15%;
+    left: 43.6%;
+    width: 10%;
 }
 .ssm button.ssm-cup {
-    top: 61%;
-    left: 49%;
-    height: 7%;
-    width: 8%;
+    top: 61.3%;
+    left: 49.4%;
+    width: 7%;
 }
 .ssm button.ssm-mannequin {
-    top: 49%;
-    left: 83.5%;
-    height: 35%;
-    width: 9.5%;
+    top: 48.4%;
+    left: 83.6%;
+    width: 9.6%;
 }
 
 
@@ -388,75 +376,51 @@ img {
     z-index: 9;
     position: relative;
 }
-.gg button {
-    border-radius: 5px;
-    animation: 3s linear 3s infinite running pulse;
-    border: 1px solid transparent;
-    background-color: rgba(255,255,255,0);
-    appearance: none;
-    position: absolute;
-    cursor: pointer;
-}
-.gg button:hover {
-    border-color: #fff !important;
-    background-color: rgba(255,255,255,0.2);
-}
 .gg button.gg-dowel {
-    top: 24%;
-    left: 25%;
-    height: 15%;
-    width: 9%;
+    top: 22.2%;
+    left: 24.3%;
+    width: 10%;
 }
 .gg button.gg-bowl {
-    top: 80%;
-    left: 63%;
-    height: 13%;
-    width: 11%;
+    top: 75.8%;
+    left: 63.5%;
+    width: 10.1%;
 }
 .gg button.gg-goblet {
-    top: 52%;
-    left: 24%;
-    height: 33%;
-    width: 13%;
+    top: 46%;
+    left: 22.9%;
+    width: 14.5%;
 }
 .gg button.gg-sand {
-    top: 86%;
-    left: 25%;
-    height: 11%;
-    width: 26%;
+    top: 81.8%;
+    left: 19.3%;
+    width: 31.5%;
 }
 .gg button.gg-constellation-low {
-    top: 54%;
-    left: 39%;
-    height: 20%;
-    width: 25%;
+    top: 50%;
+    left: 39.2%;
+    width: 24.3%;
 }
 .gg button.gg-symbol {
-    top: 30%;
-    left: 43%;
-    height: 5%;
+    top: 29.7%;
+    left: 42.8%;
     width: 3%;
 }
 .gg button.gg-moon {
-    top: 30%;
-    left: 57%;
-    height: 5%;
-    width: 3%;
+    top: 27.6%;
+    left: 59.5%;
+    width: 8.6%;
 }
 .gg button.gg-constellation-high {
-    top: 31%;
-    left: 39%;
-    height: 20%;
-    width: 25%;
+    top: 31.4%;
+    left: 39.4%;
+    width: 24.1%;
 }
 .gg button.gg-marble {
-    top: 89%;
+    top: 89.5%;
     left: 56%;
-    height: 6%;
     width: 3%;
 }
-
-
 
 
 
@@ -473,60 +437,40 @@ img {
     z-index: 9;
     position: relative;
 }
-.sot button {
-    border-radius: 5px;
-    animation: 3s linear 3s infinite running pulse;
-    border: 1px solid transparent;
-    background-color: rgba(255,255,255,0);
-    appearance: none;
-    position: absolute;
-    cursor: pointer;
-}
-.sot button:hover {
-    border-color: #fff !important;
-    background-color: rgba(255,255,255,0.2);
-}
 .sot button.sot-footlight {
-    top: 80%;
-    left: 35%;
-    height: 15%;
-    width: 9%;
+    top: 79.1%;
+    left: 34.3%;
+    width: 10%;
 }
 .sot button.sot-lobster {
-    top: 18%;
-    left: 58%;
-    height: 28%;
-    width: 18%;
+    top: 18.8%;
+    left: 58.4%;
+    width: 17.5%;
 }
 .sot button.sot-cherub {
-    top: 73%;
-    left: 56%;
-    height: 23%;
-    width: 9%;
+    top: 72.2%;
+    left: 55.6%;
+    width: 8.7%;
 }
 .sot button.sot-bottle {
-    top: 54%;
-    left: 22%;
-    height: 40%;
-    width: 15%;
+    top: 53.8%;
+    left: 21.6%;
+    width: 16%;
 }
 .sot button.sot-ballerina {
-    top: 47%;
-    left: 34%;
-    height: 26%;
-    width: 41%;
+    top: 45%;
+    left: 32.3%;
+    width: 43%;
 }
 .sot button.sot-fish {
-    top: 70%;
-    left: 71%;
-    height: 13%;
-    width: 7%;
+    top: 65.7%;
+    left: 70.4%;
+    width: 7.1%;
 }
 .sot button.sot-rose {
-    top: 20%;
-    left: 26%;
-    height: 21%;
-    width: 11%;
+    top: 18%;
+    left: 24.4%;
+    width: 13%;
 }
 
 
@@ -544,54 +488,35 @@ img {
     z-index: 9;
     position: relative;
 }
-.mlj button {
-    border-radius: 5px;
-    animation: 3s linear 3s infinite running pulse;
-    border: 1px solid transparent;
-    background-color: rgba(255,255,255,0);
-    appearance: none;
-    position: absolute;
-    cursor: pointer;
-}
-.mlj button:hover {
-    border-color: #fff !important;
-    background-color: rgba(255,255,255,0.2);
-}
 .mlj button.mlj-turtle {
-    top: 50%;
+    top: 50.4%;
     left: 54%;
-    height: 13%;
-    width: 12%;
+    width: 6%;
 }
 .mlj button.mlj-egg {
-    top: 47%;
-    left: 68%;
-    height: 15%;
-    width: 7%;
+    top: 45.6%;
+    left: 66.5%;
+    width: 10%;
 }
 .mlj button.mlj-feather {
     top: 11%;
-    left: 27%;
-    height: 19%;
+    left: 26.8%;
     width: 8%;
 }
 .mlj button.mlj-skull {
-    top: 80%;
-    left: 46%;
-    height: 15%;
-    width: 8%;
+    top: 79.2%;
+    left: 44.8%;
+    width: 10%;
 }
 .mlj button.mlj-shell {
-    top: 41%;
-    left: 23%;
-    height: 22%;
-    width: 12%;
+    top: 39.2%;
+    left: 21.3%;
+    width: 15%;
 }
 .mlj button.mlj-binoculars {
-    top: 23%;
-    left: 65%;
-    height: 13%;
-    width: 7%;
+    top: 22.5%;
+    left: 64.6%;
+    width: 8%;
 }
 
 
@@ -608,61 +533,40 @@ img {
     z-index: 9;
     position: relative;
 }
-.av button {
-    border-radius: 5px;
-    animation: 3s linear 3s infinite running pulse;
-    border: 1px solid transparent;
-    background-color: rgba(255,255,255,0);
-    appearance: none;
-    position: absolute;
-    cursor: pointer;
-}
-.av button:hover {
-    border-color: #fff !important;
-    background-color: rgba(255,255,255,0.2);
-}
 .av button.av-portrait {
-    top: 11%;
+    top: 11.3%;
     left: 60%;
-    height: 11%;
     width: 4%;
 }
 .av button.av-scissors {
-    top: 78%;
-    left: 41%;
-    height: 10%;
-    width: 14%;
-    transform: rotate(45deg);
+    top: 72.2%;
+    left: 42%;
+    width: 13%;
 }
 .av button.av-coaster {
     top: 7%;
     left: 71%;
-    height: 21%;
     width: 6%;
 }
 .av button.av-marbles-wall {
     top: 18%;
-    left: 41%;
-    height: 11%;
-    width: 6%;
+    left: 41.3%;
+    width: 5.2%;
 }
 .av button.av-marbles-jar {
-    top: 51%;
-    left: 36%;
-    height: 17%;
-    width: 6%;
+    top: 49.7%;
+    left: 35.8%;
+    width: 6.6%;
 }
 .av button.av-map {
-    top: 41%;
-    left: 51%;
-    height: 10%;
-    width: 8%;
+    top: 41.6%;
+    left: 51.4%;
+    width: 7%;
 }
 .av button.av-wood {
     top: 58%;
-    left: 48%;
-    height: 9%;
-    width: 7%;
+    left: 48.4%;
+    width: 6.5%;
 }
 
 
