@@ -681,11 +681,6 @@ img.butterfly {
 img.cornell {
     width: 830px;
 }
-img.astrology {
-    opacity: 0.5;
-    transform: rotate(50deg);
-}
-
 img.flare {
     width: 750px;
 }
@@ -710,7 +705,6 @@ img.headless-girl {
     width: 550px;
     transform: rotate(10deg);
 }
-
 img.lobster {
     width: 400px;
 }
