@@ -88,6 +88,7 @@ function WindowRoom() {
 function ConciergeRoom() {
     this.conciergeVideoCount = 0;
     this.videos = $('script#videos-html-concierge').html();
+    this.buttons = $('script#buttons-html-concierge').html();
 
     this.trackConcierge = function() {
         var self = this;
@@ -110,6 +111,7 @@ function ConciergeRoom() {
 
         // Template HTML
         $('#videos-render-concierge').html(self.videos);
+        $('.concierge-background').append(self.buttons);
 
         // Build Videos (in reverse order)
         self.vids = {
