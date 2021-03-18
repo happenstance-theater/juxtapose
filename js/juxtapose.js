@@ -226,22 +226,27 @@ function CastRoom(name, slugs) {
         if (castRoomCounter < 5) {
             prez.goto('keys-page', 3000);
         } else {
-            prez.goto('concierge-page', 3000);
-
-            _.delay(function(){
-                prez.goto('concierge-door', 3000);
-                _.delay(function(){
-                    $('body').addClass('sky');
-                    prez.goto('landing-page', 10000);
-
-                    _.delay(function(){
-                        $('.landing-credits').fadeIn();
-                    }, 20000);
-                }, 4000);
-            }, 5000);
+            this.endPlay();
         }
 
         this.playedVideoCount = 0;
+    };
+
+
+    this.endPlay = function() {
+        prez.goto('concierge-page', 3000);
+
+        _.delay(function(){
+            prez.goto('concierge-door', 3000);
+            _.delay(function(){
+                $('body').addClass('sky');
+                prez.goto('landing-page', 10000);
+
+                _.delay(function(){
+                    $('.landing-credits').fadeIn();
+                }, 20000);
+            }, 4000);
+        }, 5000);
     };
 }
 
@@ -376,4 +381,48 @@ $('#button-play').on('click', function(){
     });
 
     return false;
+});
+
+
+
+window.addEventListener("keydown", function (event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if the event was already processed
+  }
+
+  switch (event.key) {
+    case "s":
+      $('#shortcuts').toggle();
+      break;
+    default:
+      return; // Quit when this doesn't handle the key event.
+  }
+
+  // Cancel the default action to avoid it being handled twice
+  event.preventDefault();
+}, true);
+
+
+$('.shortcut-keys').on('click', function() {
+    $('body').removeClass('sky');
+    keyRoom.setup();
+    $('.landing-img').hide();
+    $('#button-play').hide();
+
+    prez.goto('keys-page', 1000);
+    $('#shortcuts').hide();
+});
+
+$('.shortcut-end').on('click', function() {
+    $('body').removeClass('sky');
+    keyRoom.setup();
+    $('.landing-img').hide();
+    $('#button-play').hide();
+
+    prez.goto('ssm-page', 1000);
+    $('#shortcuts').hide();
+
+    _.delay(function() {
+        keyRoom.ssm.endPlay();
+    }, 5000);
 });
