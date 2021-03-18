@@ -1,6 +1,6 @@
 // Impress
 var prez = impress();
-
+var castRoomCounter = 0;
 
 
 
@@ -66,7 +66,7 @@ function WindowRoom() {
             this.dispose();
 
             conciergeRoom.setup();
-            $('body').css('background', '#000');
+            $('body').removeClass('sky');
             $('#box-background').remove();
 
             prez.goto('concierge-door', 2000);
@@ -217,8 +217,30 @@ function CastRoom(name, slugs) {
     };
 
     this.returnToKeyRoom = function() {
+        // Only proceed if last video
         if (this.playedVideoCount < this.totalVideoCount) return;
-        prez.goto('keys-page');
+
+        // Count Cast Room played
+        castRoomCounter++;
+
+        if (castRoomCounter < 5) {
+            prez.goto('keys-page', 3000);
+        } else {
+            prez.goto('concierge-page', 3000);
+
+            _.delay(function(){
+                prez.goto('concierge-door', 3000);
+                _.delay(function(){
+                    $('body').addClass('sky');
+                    prez.goto('landing-page', 10000);
+
+                    _.delay(function(){
+                        $('.landing-credits').fadeIn();
+                    }, 20000);
+                }, 4000);
+            }, 5000);
+        }
+
         this.playedVideoCount = 0;
     };
 }

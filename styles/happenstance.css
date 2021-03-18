@@ -79,6 +79,9 @@
 }
 
 body {
+    background: #000;
+}
+body.sky {
     background-size: cover;
     background: url(../img/sky.jpg) no-repeat 50% 25% rgb(132,188,195);
 }
@@ -113,6 +116,9 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 90%;
+}
+#landing-page .landing-credits {
+    display: none;
 }
 
 #landing-page #button-play {
