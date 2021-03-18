@@ -365,9 +365,9 @@ $('#button-play').on('click', function(){
                     _.delay(function(){
                         $('.landing-here').fadeOut(function(){
                             _.delay(function(){
-                                prez.goto('windows-page', 25000); // 25sec
-                                windowRoom.fadeAudio(0.7, 25000);
-                            }, 15000); // 15sec
+                                prez.goto('windows-page', 30000); // 30sec
+                                windowRoom.fadeAudio(0.75, 30000);
+                            }, 5000); // 5sec
                         });
                     }, 5000); // 5sec
                 }, 10000); // 10sec
