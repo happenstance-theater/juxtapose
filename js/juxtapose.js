@@ -11,7 +11,7 @@ function WindowRoom() {
 
     this.loadAudio = function(cb) {
         this.soundtrack = new Audio('audio/windows.mp3');
-        this.soundtrack.volume = 0.1;
+        this.soundtrack.volume = 0.2;
         this.soundtrack.addEventListener("canplaythrough", cb);
     };
 
@@ -56,11 +56,11 @@ function WindowRoom() {
         });
         self.vids.gg.on('ended', function() {
             this.dispose();
-            self.fadeAudio(0, 2000);
+            self.vids.cv.play();
+            self.fadeAudio(0, 4000);
             _.delay(function() {
                 self.soundtrack.pause();
-                self.vids.cv.play();
-            }, 2000);
+            }, 4000);
         });
         self.vids.cv.on('ended', function() {
             this.dispose();
@@ -327,7 +327,7 @@ function KeyRoom() {
                 self[room].setup();
 
                 // Go to room
-                prez.goto(room + '-page');
+                prez.goto(room + '-page', 3000);
 
                 // Remove Button
                 $(this).remove();
@@ -366,7 +366,7 @@ $('#button-play').on('click', function(){
                         $('.landing-here').fadeOut(function(){
                             _.delay(function(){
                                 prez.goto('windows-page', 25000); // 25sec
-                                windowRoom.fadeAudio(0.5, 25000);
+                                windowRoom.fadeAudio(0.7, 25000);
                             }, 15000); // 15sec
                         });
                     }, 5000); // 5sec
