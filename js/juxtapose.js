@@ -347,6 +347,7 @@ function KeyRoom() {
 
 // Start the Presentation
 prez.init();
+prez.goto('landing-page', 1); // in case they arrive somewhere else
 
 // Instantiate (preserve order)
 var keyRoom = new KeyRoom();
