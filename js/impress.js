@@ -3277,40 +3277,40 @@
         // KEYBOARD NAVIGATION HANDLERS
 
         // Prevent default keydown action when one of supported key is pressed.
-        gc.addEventListener( document, "keydown", function( event ) {
-            if ( isNavigationEvent( event ) ) {
-                event.preventDefault();
-            }
-        }, false );
-
-        // Trigger impress action (next or prev) on keyup.
-        gc.addEventListener( document, "keyup", function( event ) {
-            if ( isNavigationEvent( event ) ) {
-                if ( event.shiftKey ) {
-                    switch ( event.keyCode ) {
-                        case 9: // Shift+tab
-                            api.prev();
-                            break;
-                    }
-                } else {
-                    switch ( event.keyCode ) {
-                        case 33: // Pg up
-                        case 37: // Left
-                        case 38: // Up
-                                 api.prev( event );
-                                 break;
-                        case 9:  // Tab
-                        case 32: // Space
-                        case 34: // Pg down
-                        case 39: // Right
-                        case 40: // Down
-                                 api.next( event );
-                                 break;
-                    }
-                }
-                event.preventDefault();
-            }
-        }, false );
+        // gc.addEventListener( document, "keydown", function( event ) {
+        //     if ( isNavigationEvent( event ) ) {
+        //         event.preventDefault();
+        //     }
+        // }, false );
+        //
+        // // Trigger impress action (next or prev) on keyup.
+        // gc.addEventListener( document, "keyup", function( event ) {
+        //     if ( isNavigationEvent( event ) ) {
+        //         if ( event.shiftKey ) {
+        //             switch ( event.keyCode ) {
+        //                 case 9: // Shift+tab
+        //                     api.prev();
+        //                     break;
+        //             }
+        //         } else {
+        //             switch ( event.keyCode ) {
+        //                 case 33: // Pg up
+        //                 case 37: // Left
+        //                 case 38: // Up
+        //                          api.prev( event );
+        //                          break;
+        //                 case 9:  // Tab
+        //                 case 32: // Space
+        //                 case 34: // Pg down
+        //                 case 39: // Right
+        //                 case 40: // Down
+        //                          api.next( event );
+        //                          break;
+        //             }
+        //         }
+        //         event.preventDefault();
+        //     }
+        // }, false );
 
         // Delegated handler for clicking on the links to presentation steps
         // gc.addEventListener( document, "click", function( event ) {
