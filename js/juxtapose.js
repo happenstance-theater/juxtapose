@@ -234,19 +234,19 @@ function CastRoom(name, slugs) {
 
 
     this.endPlay = function() {
-        prez.goto('concierge-page', 3000);
+        prez.goto('concierge-page', 2000);
 
         _.delay(function(){
-            prez.goto('concierge-door', 3000);
+            prez.goto('concierge-door', 2000);
             _.delay(function(){
                 $('body').addClass('sky');
-                prez.goto('landing-page', 10000);
+                prez.goto('landing-page', 3000);
 
                 _.delay(function(){
                     $('.landing-credits').fadeIn();
-                }, 20000);
-            }, 4000);
-        }, 5000);
+                }, 10000);
+            }, 2000);
+        }, 3000);
     };
 }
 
