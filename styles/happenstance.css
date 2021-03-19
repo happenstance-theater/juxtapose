@@ -145,7 +145,8 @@ img {
     position: relative;
     padding: 10%;
 }
-#landing-page .landing-img {
+#landing-page .landing-img,
+#landing-page .credit-img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -217,10 +218,17 @@ img {
 
 
 
+
+a.room-button {
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform-origin: center center;
+    transition: all 0.1s ease-in-out;
+    outline: none !important;
+}
 button.room-button {
-    border-radius: 10px;
-    /* animation: heartbeat 6s ease-in infinite both; */
-    animation: wobble-hor-top 14s ease-in-out infinite both;
     border: none;
     background: none;
     appearance: none;
@@ -238,8 +246,31 @@ button.room-button:active {
     outline: none !important;
     border: none;
 }
-button.room-button:hover {
+.room-button.wobble {
+    animation: wobble-hor-top 14s ease-in-out infinite both;
+}
+.room-button.heartbeat {
+    animation: heartbeat 6s ease-in infinite both;
+}
+.room-button:hover {
     transform: scale(1.05) !important;
+}
+
+/* Credit Buttons */
+.landing-credits .credits-parrot {
+    width: 8%;
+    top: 10%;
+    left: 8.8%;
+}
+.landing-credits .credits-ball {
+    width: 5.3%;
+    top: 79%;
+    left: 82.7%;
+}
+.landing-credits .credits-key {
+    width: 4.7%;
+    top: 11%;
+    left: 80.5%;
 }
 
 
@@ -610,7 +641,7 @@ img.planetary {
     z-index: 99;
 }
 img.key {
-    width: 180px;
+    width: 150px;
 }
 img.headless-girl {
     width: 550px;
