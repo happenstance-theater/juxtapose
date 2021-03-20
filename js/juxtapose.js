@@ -378,7 +378,7 @@ $('#button-play').on('click', function(){
                     }, 5000); // 5sec
                 }, 10000); // 10sec
             });
-        }, 40000); // 40sec
+        }, 30000); // 30sec
     });
 
     return false;
