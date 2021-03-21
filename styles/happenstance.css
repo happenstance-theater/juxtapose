@@ -31,23 +31,23 @@
 }
 @keyframes wobble {
   0%,
-  50% {
+  75% {
             transform: translateX(0%);
             transform-origin: 50% 50%;
   }
-  7.5% {
+  11.25% {
             transform: translateX(-30px) rotate(6deg);
   }
-  15% {
+  22.5% {
             transform: translateX(15px) rotate(-6deg);
   }
-  22.5% {
+  33.75% {
             transform: translateX(-15px) rotate(3.6deg);
   }
-  30% {
+  45% {
             transform: translateX(9px) rotate(-2.4deg);
   }
-  37.5% {
+  56.25% {
             transform: translateX(-6px) rotate(1.2deg);
   }
 }
@@ -256,16 +256,16 @@ button.room-button:active {
     border: none;
 }
 .room-button.wobble {
-    animation: wobble 14s alternate ease-in-out infinite both;
+    animation: wobble 10s alternate ease-in-out infinite both;
 }
 .room-button.heartbeat {
     animation: heartbeat 6s ease-in infinite both;
 }
 .room-button.shake-bottom {
-    animation: shake-bottom 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s infinite both;
+    animation: shake-bottom 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1s infinite both;
 }
 .room-button.shake-top {
-    animation: shake-top 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s infinite both;
+    animation: shake-top 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s infinite both;
 }
 .room-button:hover {
     transform: scale(1.05) !important;
