@@ -272,11 +272,6 @@ button.room-button:active {
 }
 
 /* Credit Buttons */
-.landing-credits .credits-parrot {
-    width: 8%;
-    top: 10%;
-    left: 8.8%;
-}
 .landing-credits .credits-ball {
     width: 5.3%;
     top: 79%;
@@ -284,8 +279,8 @@ button.room-button:active {
 }
 .landing-credits .credits-key {
     width: 4.7%;
-    top: 11%;
-    left: 80.5%;
+    top: 11.8%;
+    left: 16.3%;
 }
 
 

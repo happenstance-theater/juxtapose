@@ -244,7 +244,7 @@ function CastRoom(name, slugs) {
 
                 _.delay(function(){
                     $('.landing-credits').fadeIn();
-                }, 10000);
+                }, 7000);
             }, 2000);
         }, 3000);
     };
@@ -372,7 +372,7 @@ $('#button-play').on('click', function(){
                         $('.landing-here').fadeOut(function(){
                             _.delay(function(){
                                 prez.goto('windows-page', 30000); // 30sec
-                                windowRoom.fadeAudio(0.75, 30000);
+                                windowRoom.fadeAudio(1, 30000);
                             }, 5000); // 5sec
                         });
                     }, 5000); // 5sec
