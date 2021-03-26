@@ -359,30 +359,66 @@ windowRoom.loadAudio(function(){
 
 
 // Play button listener
+// $('#button-play').on('click', function(){
+//     $(this).fadeOut();
+//
+//     $('.landing-paper').fadeOut(function(){
+//         _.delay(function(){
+//             $('.landing-poem').fadeOut(function(){
+//                 _.delay(function(){
+//                     windowRoom.setup();
+//
+//                     _.delay(function(){
+//                         $('.landing-here').fadeOut(function(){
+//                             _.delay(function(){
+//                                 prez.goto('windows-page', 30000); // 30sec
+//                                 windowRoom.fadeAudio(1, 30000);
+//                             }, 5000); // 5sec
+//                         });
+//                     }, 5000); // 5sec
+//                 }, 5000); // 5sec
+//             });
+//         }, 30000); // 30sec
+//     });
+//
+//     return false;
+// });
+
 $('#button-play').on('click', function(){
     $(this).fadeOut();
-
-    $('.landing-paper').fadeOut(function(){
-        _.delay(function(){
-            $('.landing-poem').fadeOut(function(){
-                _.delay(function(){
-                    windowRoom.setup();
-
-                    _.delay(function(){
-                        $('.landing-here').fadeOut(function(){
-                            _.delay(function(){
-                                prez.goto('windows-page', 30000); // 30sec
-                                windowRoom.fadeAudio(1, 30000);
-                            }, 5000); // 5sec
-                        });
-                    }, 5000); // 5sec
-                }, 5000); // 5sec
-            });
-        }, 30000); // 30sec
-    });
-
-    return false;
+    $('.landing-paper').fadeOut();
 });
+
+$('#housekeeping-play').on('click', function(){
+    $(this).fadeOut();
+    $('#housekeeping-donate').fadeOut();
+    $('.landing-housekeeping').fadeOut();
+});
+
+$('#poem-keys').on('click', function(){
+    $(this).fadeOut();
+    $('.landing-poem').fadeOut();
+});
+
+
+$('#here-play').on('click', function(){
+    windowRoom.setup();
+    $(this).fadeOut();
+    _.delay(function(){
+        $('.landing-here').fadeOut(function(){
+            _.delay(function(){
+                prez.goto('windows-page', 30000); // 30sec
+                windowRoom.fadeAudio(1, 30000);
+            }, 5000); // 5sec
+        });
+    }, 2000);
+});
+
+
+
+
+
+
 
 
 
@@ -407,7 +443,7 @@ window.addEventListener("keydown", function (event) {
 $('.shortcut-keys').on('click', function() {
     $('body').removeClass('sky');
     keyRoom.setup();
-    $('.landing-img').hide();
+    $('.landing-intro').hide();
     $('#button-play').hide();
 
     prez.goto('keys-page', 1000);
@@ -417,8 +453,7 @@ $('.shortcut-keys').on('click', function() {
 $('.shortcut-end').on('click', function() {
     $('body').removeClass('sky');
     keyRoom.setup();
-    $('.landing-img').hide();
-    $('#button-play').hide();
+    $('.landing-intro').hide();
 
     prez.goto('ssm-page', 1000);
     $('#shortcuts').hide();

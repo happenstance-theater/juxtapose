@@ -142,6 +142,9 @@ img {
     width: 1000px;
     height: 562px;
 }
+.step.hide-overflow {
+    overflow: hidden;
+}
 .step .vid {
     position: absolute;
     top: 0;
@@ -150,9 +153,68 @@ img {
 
 
 
+
+/* Buttons */
+a.room-button {
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform-origin: center center;
+    transition: all 0.1s ease-in-out;
+    outline: none !important;
+}
+button.room-button {
+    border: none;
+    background: none;
+    appearance: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 10%;
+    left: 10%;
+    cursor: pointer;
+    transform-origin: center center;
+    transition: all 0.1s ease-in-out;
+    outline: none !important;
+}
+button.room-button:active {
+    outline: none !important;
+    border: none;
+}
+.wobble {
+    animation: wobble 10s alternate ease-in-out infinite both;
+}
+.wobble-d1 {
+    animation: wobble 10s alternate ease-in-out 1s infinite both;
+}
+.wobble-d2 {
+    animation: wobble 10s alternate ease-in-out 2s infinite both;
+}
+.wobble-d3 {
+    animation: wobble 10s alternate ease-in-out 4s infinite both;
+}
+.wobble-d4 {
+    animation: wobble 10s alternate ease-in-out 7s infinite both;
+}
+.heartbeat {
+    animation: heartbeat 6s ease-in infinite both;
+}
+.shake-bottom {
+    animation: shake-bottom 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1s infinite both;
+}
+.shake-top {
+    animation: shake-top 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s infinite both;
+}
+.room-button:hover {
+    transform: scale(1.05) !important;
+}
+
+
+
 #landing-page .landing-intro {
-    position: relative;
-    padding: 10%;
+    /* position: relative; */
+    /* padding: 10%; */
 }
 #landing-page .landing-img,
 #landing-page .credit-img {
@@ -165,24 +227,38 @@ img {
 #landing-page .landing-credits {
     display: none;
 }
-
 #landing-page #button-play {
-    display: none;
-    position: absolute;
-    bottom: 14%;
-    right: 19%;
-    font-size: 25px;
-    font-family: cursive;
-    cursor: pointer;
-    color: #942a32;
-}
-#landing-page #button-play:hover {
-    opacity: 0.8;
+    top: auto;
+    left: auto;
+    bottom: 10%;
+    right: 10%;
 }
 #landing-page #button-play img {
-    width: 50px;
-    vertical-align: bottom;
-    animation: shake-bottom 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s infinite both;
+    width: 200px;
+}
+
+
+#landing-page #housekeeping-play {
+    width: 100px;
+    top: 73%;
+    left: 72%;
+}
+#landing-page #here-play {
+    width: 100px;
+    top: 47%;
+    left: 63%;
+}
+
+#landing-page #housekeeping-donate {
+    width: 144px;
+    top: 74%;
+    left: 32%;
+}
+
+#landing-page #poem-keys {
+    width: 90px;
+    top: 73%;
+    left: 81%;
 }
 
 
@@ -228,48 +304,7 @@ img {
 
 
 
-a.room-button {
-    display: block;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    transform-origin: center center;
-    transition: all 0.1s ease-in-out;
-    outline: none !important;
-}
-button.room-button {
-    border: none;
-    background: none;
-    appearance: none;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    top: 10%;
-    left: 10%;
-    cursor: pointer;
-    transform-origin: center center;
-    transition: all 0.1s ease-in-out;
-    outline: none !important;
-}
-button.room-button:active {
-    outline: none !important;
-    border: none;
-}
-.room-button.wobble {
-    animation: wobble 10s alternate ease-in-out infinite both;
-}
-.room-button.heartbeat {
-    animation: heartbeat 6s ease-in infinite both;
-}
-.room-button.shake-bottom {
-    animation: shake-bottom 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1s infinite both;
-}
-.room-button.shake-top {
-    animation: shake-top 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s infinite both;
-}
-.room-button:hover {
-    transform: scale(1.05) !important;
-}
+
 
 /* Credit Buttons */
 .landing-credits .credits-ball {
