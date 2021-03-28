@@ -389,35 +389,16 @@ windowRoom.loadAudio(function(){
 });
 
 
-// Play button listener
-// $('#button-play').on('click', function(){
-//     $(this).fadeOut();
-//
-//     $('.landing-paper').fadeOut(function(){
-//         _.delay(function(){
-//             $('.landing-poem').fadeOut(function(){
-//                 _.delay(function(){
-//                     windowRoom.setup();
-//
-//                     _.delay(function(){
-//                         $('.landing-here').fadeOut(function(){
-//                             _.delay(function(){
-//                                 prez.goto('windows-page', 30000); // 30sec
-//                                 windowRoom.fadeAudio(1, 30000);
-//                             }, 5000); // 5sec
-//                         });
-//                     }, 5000); // 5sec
-//                 }, 5000); // 5sec
-//             });
-//         }, 30000); // 30sec
-//     });
-//
-//     return false;
-// });
+var housekeepingTrack = new Audio('audio/housekeeping.mp3');
+housekeepingTrack.volume = 0;
+
+
 
 $('#button-play').on('click', function(){
     $(this).fadeOut();
     $('.landing-paper').fadeOut();
+    housekeepingTrack.play();
+    $(housekeepingTrack).animate({volume: 1}, 5000);
 });
 
 $('#housekeeping-play').on('click', function(){
@@ -429,6 +410,10 @@ $('#housekeeping-play').on('click', function(){
 $('#poem-keys').on('click', function(){
     $(this).fadeOut();
     $('.landing-poem').fadeOut();
+    $(housekeepingTrack).animate({volume: 0}, 5000);
+    _.delay(function() {
+        housekeepingTrack.pause();
+    }, 5000);
 });
 
 
