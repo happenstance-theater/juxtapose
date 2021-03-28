@@ -78,6 +78,97 @@ function WindowRoom() {
         // Play the first to start
         self.vids.ssm.play();
     };
+
+    this.setup = function() {
+        var self = this;
+
+        // Start Playing the background audio
+        self.soundtrack.play();
+
+        // Template HTML
+        $('#videos-render-windows').html(self.videos);
+
+        // Build Videos (in reverse order)
+        self.vids = {
+            ssm: videojs('windows-ssm'),
+            mlj: videojs('windows-mlj'),
+            sot: videojs('windows-sot'),
+            av: videojs('windows-av'),
+            gg: videojs('windows-gg'),
+            cv: videojs('windows-chari-vari')
+        };
+
+        self.vids.ssm.on('ended', function() {
+            this.dispose();
+            self.vids.mlj.play();
+        });
+        self.vids.mlj.on('ended', function() {
+            this.dispose();
+            self.vids.sot.play();
+        });
+        self.vids.sot.on('ended', function() {
+            this.dispose();
+            self.vids.av.play();
+        });
+        self.vids.av.on('ended', function() {
+            this.dispose();
+            self.vids.gg.play();
+        });
+        self.vids.gg.on('ended', function() {
+            this.dispose();
+            self.vids.cv.play();
+            self.fadeAudio(0, 4000);
+            _.delay(function() {
+                self.soundtrack.pause();
+            }, 4000);
+        });
+        self.vids.cv.on('ended', function() {
+            this.dispose();
+
+            conciergeRoom.setup();
+            $('body').removeClass('sky');
+            $('#box-background').remove();
+
+            prez.goto('concierge-door', 2000);
+            _.delay(function(){
+                prez.goto('concierge-page', 4000);
+            }, 2500);
+        });
+
+        // Play the first to start
+        self.vids.ssm.play();
+    };
+
+    this.chari = function() {
+        var self = this;
+
+        // Start Playing the background audio
+        self.soundtrack.play();
+
+        // Template HTML
+        $('#videos-render-windows').html(self.videos);
+
+        // Build Videos (in reverse order)
+        self.vids = {
+            cv: videojs('windows-chari-vari')
+        };
+
+        self.vids.cv.on('ended', function() {
+            this.dispose();
+
+            conciergeRoom.setup();
+            $('body').removeClass('sky');
+            $('#box-background').remove();
+
+            prez.goto('concierge-door', 2000);
+            _.delay(function(){
+                prez.goto('concierge-page', 4000);
+            }, 2500);
+        });
+
+        // Play the first to start
+        self.vids.cv.play();
+    };
 }
 
 
@@ -444,7 +535,6 @@ $('.shortcut-keys').on('click', function() {
     $('body').removeClass('sky');
     keyRoom.setup();
     $('.landing-intro').hide();
-    $('#button-play').hide();
 
     prez.goto('keys-page', 1000);
     $('#shortcuts').hide();
@@ -461,4 +551,11 @@ $('.shortcut-end').on('click', function() {
     _.delay(function() {
         keyRoom.ssm.endPlay();
     }, 5000);
+});
+
+$('.shortcut-chari').on('click', function() {
+    $('.landing-intro').hide();
+    windowRoom.chari();
+    prez.next();
+    $('#shortcuts').hide();
 });
