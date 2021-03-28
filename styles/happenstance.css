@@ -244,9 +244,9 @@ button.room-button:active {
     left: 72%;
 }
 #landing-page #here-play {
-    width: 100px;
-    top: 47%;
-    left: 63%;
+    width: 130px;
+    top: 40%;
+    left: 61%;
 }
 
 #landing-page #housekeeping-donate {
@@ -256,8 +256,8 @@ button.room-button:active {
 }
 
 #landing-page #poem-keys {
-    width: 90px;
-    top: 73%;
+    width: 80px;
+    top: 70%;
     left: 81%;
 }
 
