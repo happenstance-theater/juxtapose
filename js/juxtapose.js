@@ -399,12 +399,19 @@ $('#button-play').on('click', function(){
     $('.landing-paper').fadeOut();
     housekeepingTrack.play();
     $(housekeepingTrack).animate({volume: 1}, 5000);
+    _.delay(function(){
+        $('#housekeeping-play').addClass('shake-top');
+        $('#housekeeping-donate').addClass('heartbeat');
+    }, 20000);
 });
 
 $('#housekeeping-play').on('click', function(){
     $(this).fadeOut();
     $('#housekeeping-donate').fadeOut();
     $('.landing-housekeeping').fadeOut();
+    _.delay(function(){
+        $('#poem-keys').addClass('shake-top');
+    }, 20000);
 });
 
 $('#poem-keys').on('click', function(){
