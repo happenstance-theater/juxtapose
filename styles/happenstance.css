@@ -203,7 +203,20 @@ img {
   }
 }
 
-
+.mobile-warning {
+    color: black;
+    font-size: 18px;
+    background: white;
+    padding: 20px;
+    width: 90%;
+    line-height: 1.2;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-style: italic;
+    display: none;
+}
 
 
 

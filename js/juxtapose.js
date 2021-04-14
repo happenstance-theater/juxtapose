@@ -375,121 +375,119 @@ function KeyRoom() {
 
 
 
+ if (window.innerWidth < 800 || window.innerHeight < 600) {
+     $('.lds-ring').fadeOut();
+     $('.mobile-warning').fadeIn();
+ } else {
+
+    // Instantiate (preserve order)
+    var keyRoom = new KeyRoom();
+    var conciergeRoom = new ConciergeRoom();
+    var windowRoom = new WindowRoom();
+    windowRoom.loadAudio(function(){
+        prez.init();
+        prez.goto('landing-page', 1); // in case they arrive somewhere else
+        _.delay(function(){
+            $('#loading').fadeOut();
+        }, 2000);
+    });
+
+
+    var housekeepingTrack = new Audio('audio/housekeeping.mp3');
+    housekeepingTrack.volume = 0;
 
 
 
-// Instantiate (preserve order)
-var keyRoom = new KeyRoom();
-var conciergeRoom = new ConciergeRoom();
-var windowRoom = new WindowRoom();
-windowRoom.loadAudio(function(){
-    prez.init();
-    prez.goto('landing-page', 1); // in case they arrive somewhere else
-    _.delay(function(){
-        $('#loading').fadeOut();
-    }, 2000);
-});
+    $('#button-play').on('click', function(){
+        $(this).fadeOut();
+        $('.landing-paper').fadeOut();
+        housekeepingTrack.play();
+        $(housekeepingTrack).animate({volume: 1}, 5000);
+        _.delay(function(){
+            $('#housekeeping-play').addClass('shake-top');
+            $('#housekeeping-donate').addClass('heartbeat');
+        }, 20000);
+    });
+
+    $('#housekeeping-play').on('click', function(){
+        $(this).fadeOut();
+        $('#housekeeping-donate').fadeOut();
+        $('.landing-housekeeping').fadeOut();
+        _.delay(function(){
+            $('#poem-keys').addClass('shake-top');
+        }, 20000);
+    });
+
+    $('#poem-keys').on('click', function(){
+        $(this).fadeOut();
+        $('.landing-poem').fadeOut();
+        $(housekeepingTrack).animate({volume: 0}, 5000);
+        _.delay(function() {
+            housekeepingTrack.pause();
+        }, 5000);
+    });
 
 
-var housekeepingTrack = new Audio('audio/housekeeping.mp3');
-housekeepingTrack.volume = 0;
-
-
-
-$('#button-play').on('click', function(){
-    $(this).fadeOut();
-    $('.landing-paper').fadeOut();
-    housekeepingTrack.play();
-    $(housekeepingTrack).animate({volume: 1}, 5000);
-    _.delay(function(){
-        $('#housekeeping-play').addClass('shake-top');
-        $('#housekeeping-donate').addClass('heartbeat');
-    }, 20000);
-});
-
-$('#housekeeping-play').on('click', function(){
-    $(this).fadeOut();
-    $('#housekeeping-donate').fadeOut();
-    $('.landing-housekeeping').fadeOut();
-    _.delay(function(){
-        $('#poem-keys').addClass('shake-top');
-    }, 20000);
-});
-
-$('#poem-keys').on('click', function(){
-    $(this).fadeOut();
-    $('.landing-poem').fadeOut();
-    $(housekeepingTrack).animate({volume: 0}, 5000);
-    _.delay(function() {
-        housekeepingTrack.pause();
-    }, 5000);
-});
-
-
-$('#here-play').on('click', function(){
-    windowRoom.setup();
-    $(this).fadeOut();
-    _.delay(function(){
-        $('.landing-here').fadeOut(function(){
-            _.delay(function(){
-                prez.goto('windows-page', 30000); // 30sec
-                windowRoom.fadeAudio(1, 30000);
-            }, 5000); // 5sec
-        });
-    }, 2000);
-});
+    $('#here-play').on('click', function(){
+        windowRoom.setup();
+        $(this).fadeOut();
+        _.delay(function(){
+            $('.landing-here').fadeOut(function(){
+                _.delay(function(){
+                    prez.goto('windows-page', 30000); // 30sec
+                    windowRoom.fadeAudio(1, 30000);
+                }, 5000); // 5sec
+            });
+        }, 2000);
+    });
 
 
 
+    window.addEventListener("keydown", function (event) {
+      if (event.defaultPrevented) {
+        return; // Do nothing if the event was already processed
+      }
+
+      switch (event.key) {
+        case "s":
+          $('#shortcuts').toggle();
+          break;
+        default:
+          return; // Quit when this doesn't handle the key event.
+      }
+
+      // Cancel the default action to avoid it being handled twice
+      event.preventDefault();
+    }, true);
 
 
 
+    $('.shortcut-keys').on('click', function() {
+        $('body').removeClass('sky');
+        keyRoom.setup();
+        $('.landing-intro').hide();
 
+        prez.goto('keys-page', 1000);
+        $('#shortcuts').hide();
+    });
 
+    $('.shortcut-end').on('click', function() {
+        $('body').removeClass('sky');
+        keyRoom.setup();
+        $('.landing-intro').hide();
 
-window.addEventListener("keydown", function (event) {
-  if (event.defaultPrevented) {
-    return; // Do nothing if the event was already processed
-  }
+        prez.goto('ssm-page', 1000);
+        $('#shortcuts').hide();
 
-  switch (event.key) {
-    case "s":
-      $('#shortcuts').toggle();
-      break;
-    default:
-      return; // Quit when this doesn't handle the key event.
-  }
+        _.delay(function() {
+            keyRoom.ssm.endPlay();
+        }, 5000);
+    });
 
-  // Cancel the default action to avoid it being handled twice
-  event.preventDefault();
-}, true);
-
-
-$('.shortcut-keys').on('click', function() {
-    $('body').removeClass('sky');
-    keyRoom.setup();
-    $('.landing-intro').hide();
-
-    prez.goto('keys-page', 1000);
-    $('#shortcuts').hide();
-});
-
-$('.shortcut-end').on('click', function() {
-    $('body').removeClass('sky');
-    keyRoom.setup();
-    $('.landing-intro').hide();
-
-    prez.goto('ssm-page', 1000);
-    $('#shortcuts').hide();
-
-    _.delay(function() {
-        keyRoom.ssm.endPlay();
-    }, 5000);
-});
-
-$('.shortcut-chari').on('click', function() {
-    $('.landing-intro').hide();
-    windowRoom.chari();
-    prez.next();
-    $('#shortcuts').hide();
-});
+    $('.shortcut-chari').on('click', function() {
+        $('.landing-intro').hide();
+        windowRoom.chari();
+        prez.next();
+        $('#shortcuts').hide();
+    });
+}
