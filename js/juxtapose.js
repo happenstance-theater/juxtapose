@@ -381,6 +381,7 @@ function mobileAndTabletCheck() {
 
 
  if (window.innerWidth < 800 || window.innerHeight < 600 || mobileAndTabletCheck()) {
+     $('#impress').hide();
      $('.lds-ring').fadeOut();
      $('.mobile-warning').fadeIn();
  } else {
